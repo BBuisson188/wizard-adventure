@@ -2,7 +2,7 @@ window.WIZARD_ADVENTURES_LEVEL_1 = {
   meta: {
     title: 'Wizard Adventures',
     levelName: 'Moonstone Meadow 1-1',
-    version: 'level1-foundation-0.3-title-bell-star-touch'
+    version: 'level1-foundation-0.4-checkpoint-owl-polish'
   },
   display: {
     width: 960,
@@ -190,7 +190,7 @@ window.WIZARD_ADVENTURES_LEVEL_1 = {
       { type: 'cursedBook', x: 2840, y: 410, dir: 1 },
       { type: 'goblin', x: 4350, y: 285, dir: -1 },
       { type: 'armoredBeetle', x: 4820, y: 416, dir: 1 },
-      { type: 'scrollLauncher', x: 5580, y: 420, dir: -1 },
+      { type: 'scrollLauncher', x: 6480, y: 420, dir: -1 },
       { type: 'cursedBook', x: 6200, y: 410, dir: -1 }
     ],
     goal: { x: 7050, y: 58 }

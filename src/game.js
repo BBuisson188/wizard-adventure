@@ -38,6 +38,7 @@
     message: '',
     messageTimer: 0,
     particles: [],
+    checkpoint: { x: DATA.level.spawn.x, y: DATA.level.spawn.y, active: false },
     owlHint: { active: false, expanded: false, timer: 0, owl: null }
   };
 
@@ -170,6 +171,7 @@
     state.message = 'Recover the stolen spell book!';
     state.messageTimer = 180;
     state.particles = [];
+    state.checkpoint = { x: DATA.level.spawn.x, y: DATA.level.spawn.y, active: false };
     state.owlHint = { active: false, expanded: false, timer: 0, owl: null };
 
     Object.assign(player, {
@@ -198,7 +200,7 @@
     world.coins = DATA.level.coins.map(([x, y], i) => ({ id: i, x, y, w: 30, h: 30, collected: false, bob: Math.random() * 100 }));
     world.items = [];
     world.projectiles = [];
-    world.props = DATA.level.props.map(p => ({ ...p }));
+    world.props = DATA.level.props.map(p => ({ ...p, activated: false }));
     world.goal = { ...DATA.level.goal, w: 130, h: 250, ringing: 0 };
     world.enemies = DATA.level.enemies.map((e, i) => makeEnemy(e, i));
   }
@@ -397,7 +399,12 @@
     if (!state.owlHint.active) return;
     state.owlHint.expanded = true;
     state.owlHint.timer = 0;
-    showMessage('Owl helper: Double jump to reach high ledges.', 180);
+    const hint = player.power === 'white'
+      ? 'Owl helper: White Wizards can cast bouncing fireballs with X or B.'
+      : player.power === 'old'
+        ? 'Owl helper: Crouch as an Old Wizard to fit through low spaces.'
+        : 'Owl helper: Double jump to reach high ledges.';
+    showMessage(hint, 180);
     playTone('coin');
   }
 
@@ -696,6 +703,20 @@
     world.projectiles = world.projectiles.filter(p => p.life > 0 && p.x > state.cameraX - 400 && p.x < state.cameraX + W + 400 && p.y < H + 220);
   }
 
+  function updateCheckpoints() {
+    for (const p of world.props) {
+      if (p.type !== 'checkpoint' || p.activated) continue;
+      const playerCenter = player.x + player.w / 2;
+      if (playerCenter >= p.x + 24) {
+        p.activated = true;
+        state.checkpoint = { x: p.x + 56, y: DATA.level.spawn.y, active: true };
+        showMessage('Checkpoint reached!', 160);
+        addScore(500, p.x + 30, p.y);
+        playTone('power');
+      }
+    }
+  }
+
   function hurtPlayer(fell) {
     if (player.invincible > 0 && !fell) return;
     playTone('hurt');
@@ -714,8 +735,8 @@
   }
 
   function respawnPlayer() {
-    player.x = Math.max(80, state.cameraX + 120);
-    player.y = 260;
+    player.x = state.checkpoint.active ? state.checkpoint.x : Math.max(80, state.cameraX + 120);
+    player.y = state.checkpoint.active ? state.checkpoint.y : 260;
     player.vx = 0;
     player.vy = 0;
     player.power = 'baby';
@@ -783,6 +804,7 @@
       updateEnemies();
       updateProjectiles();
       updateOwlHelper();
+      updateCheckpoints();
       updateGoal();
       updateParticles();
       for (const b of world.blocks) if (b.bump > 0) b.bump--;
@@ -859,7 +881,19 @@
       if (p.type === 'sign') drawImageWorld(DATA.assets.tiles.signpost, p.x, p.y, 90, 110);
       if (p.type === 'shrub') drawImageWorld(DATA.assets.tiles.shrub, p.x, p.y, 76, 66);
       if (p.type === 'rock') drawImageWorld(DATA.assets.tiles.mossyRock, p.x, p.y, 78, 72);
-      if (p.type === 'checkpoint') drawImageWorld(DATA.assets.tiles.checkpoint, p.x, p.y, 95, 165);
+      if (p.type === 'checkpoint') {
+        if (p.activated) {
+          ctx.save();
+          ctx.globalCompositeOperation = 'lighter';
+          ctx.globalAlpha = 0.28 + Math.sin(state.frame * 0.12) * 0.08;
+          ctx.fillStyle = '#fff36d';
+          ctx.beginPath();
+          ctx.ellipse(p.x - state.cameraX + 48, p.y + 60, 46, 86, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+        drawImageWorld(DATA.assets.tiles.checkpoint, p.x, p.y, 95, 165);
+      }
       if (p.type === 'owl') {
         let owlPath = DATA.assets.enemies.owl.perched;
         if (state.owlHint.owl === p && state.owlHint.expanded) owlPath = DATA.assets.enemies.owl.point || owlPath;
@@ -1159,7 +1193,7 @@
     const sx = p.x - state.cameraX + 45;
     const sy = p.y - 20;
     const text = state.owlHint.expanded
-      ? 'Double jump to reach high ledges. White Wizards can cast fireballs with X or B.'
+      ? 'Double jump to reach high ledges. Old Wizards can crouch through low spaces. White Wizards cast fireballs with X or B.'
       : 'Hoot! Tap me or press Up for a hint.';
     const lines = wrapTextToLines(text, state.owlHint.expanded ? 34 : 28);
     const bw = state.owlHint.expanded ? 360 : 250;

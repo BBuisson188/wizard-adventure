@@ -1062,6 +1062,16 @@ When handing this project to Codex, make sure Codex understands:
 11. Verify behavior after every patch.
 12. Maintain asset folders and file paths unless intentionally updating all references.
 
+### Git / publishing note
+
+This local folder was originally built locally and then manually copied/uploaded to the GitHub repository:
+
+```text
+git@github.com:BBuisson188/wizard-adventure.git
+```
+
+On May 7, 2026, the folder was started as a normal local Git worktree for that repo using the SSH remote above. Future publishing should use normal local Git over SSH from this folder, with Windows OpenSSH (`C:\Windows\System32\OpenSSH\ssh.exe`) rather than HTTPS credentials or GitHub API publishing.
+
 ---
 
 ## 24. Recommended first Codex prompt
