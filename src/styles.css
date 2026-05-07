@@ -1,0 +1,213 @@
+:root {
+  --page: #101735;
+  --panel: #19265a;
+  --line: rgba(255,255,255,.16);
+  --text: #f6f8ff;
+  --muted: #b8c9ff;
+  --gold: #ffd66e;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 50% 0%, #30458f 0%, #14204c 42%, #0e1431 100%);
+}
+.shell {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.game-card {
+  width: min(1160px, 100%);
+  background: rgba(14, 20, 49, .78);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 18px 54px rgba(0,0,0,.35);
+  padding: 18px;
+}
+.topbar {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+h1 { margin: 0; font-size: 32px; line-height: 1; color: var(--gold); }
+p { margin: 6px 0 0; color: var(--muted); }
+.controls-note {
+  color: var(--muted);
+  font-size: 14px;
+  text-align: right;
+}
+.controls-note strong { color: white; }
+.canvas-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #050916;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: auto;
+}
+.overlay {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 12, 28, .82);
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.overlay.hidden { display: none; }
+.notes {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.notes strong { color: white; }
+@media (max-width: 760px) {
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .controls-note { text-align: left; }
+  h1 { font-size: 26px; }
+}
+
+
+/* Touch controls are part of the real control layer, not a separate demo overlay. */
+.touch-controls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  display: block;
+  --pad: max(18px, env(safe-area-inset-left));
+  --pad-r: max(18px, env(safe-area-inset-right));
+  --pad-b: max(18px, env(safe-area-inset-bottom));
+}
+.touch-dpad,
+.touch-actions {
+  position: absolute;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.touch-dpad {
+  left: calc(var(--pad) + 4px);
+  bottom: calc(var(--pad-b) + 8px);
+  width: 166px;
+  height: 166px;
+}
+.touch-actions {
+  right: calc(var(--pad-r) + 12px);
+  bottom: calc(var(--pad-b) + 24px);
+  width: 172px;
+  height: 142px;
+}
+.touch-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 2px solid rgba(255,255,255,.74);
+  background: rgba(10, 18, 46, .36);
+  color: rgba(255,255,255,.88);
+  box-shadow: 0 4px 16px rgba(0,0,0,.28), inset 0 0 14px rgba(255,255,255,.08);
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0,0,0,.35);
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.touch-btn.pressed {
+  background: rgba(126,200,255,.72);
+  border-color: rgba(255,255,255,.95);
+  color: white;
+  transform: scale(.96);
+}
+.dpad-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  font-size: 25px;
+}
+.dpad-btn.up { left: 54px; top: 0; }
+.dpad-btn.left { left: 0; top: 54px; }
+.dpad-btn.right { right: 0; top: 54px; }
+.dpad-btn.down { left: 54px; bottom: 0; }
+.action-btn {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  font-size: 30px;
+  background: rgba(255,214,110,.32);
+}
+/* Standard right-side layout: B is closer to the screen edge and higher; A is closer to the middle and lower. */
+.touch-actions .button-b {
+  right: 0;
+  top: 0;
+}
+.touch-actions .button-a {
+  left: 0;
+  bottom: 0;
+}
+.touch-actions .button-b.disabled {
+  background: rgba(70, 82, 115, .24);
+  border-color: rgba(255,255,255,.34);
+  color: rgba(255,255,255,.45);
+  box-shadow: 0 4px 14px rgba(0,0,0,.18), inset 0 0 10px rgba(255,255,255,.04);
+}
+.touch-controls.on-title { display: none; }
+.touch-controls.on-title .button-b.disabled {
+  background: rgba(255,214,110,.32);
+  border-color: rgba(255,255,255,.74);
+  color: rgba(255,255,255,.88);
+}
+/* Future flipped layout support. Add class "flipped" instead of "standard" to mirror the control groups. */
+.touch-controls.flipped .touch-dpad {
+  left: auto;
+  right: calc(var(--pad-r) + 4px);
+}
+.touch-controls.flipped .touch-actions {
+  right: auto;
+  left: calc(var(--pad) + 12px);
+}
+.touch-controls.flipped .touch-actions .button-b {
+  left: 0;
+  right: auto;
+  top: 0;
+}
+.touch-controls.flipped .touch-actions .button-a {
+  right: 0;
+  left: auto;
+  bottom: 0;
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 900px) {
+  .shell { padding: 0; align-items: stretch; }
+  .game-card { border-radius: 0; padding: 8px; width: 100%; min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
+  .topbar, .notes { display: none; }
+  .canvas-wrap { border-radius: 12px; }
+  .touch-controls { display: block; }
+}
+
+@media (max-width: 600px) {
+  .touch-dpad { transform: scale(.86); transform-origin: bottom left; }
+  .touch-actions { transform: scale(.86); transform-origin: bottom right; }
+}

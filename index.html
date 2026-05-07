@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Wizard Adventures - Level 1</title>
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="game-card">
+      <div class="topbar">
+        <div>
+          <h1>Wizard Adventures</h1>
+          <p>Level 1-1: Moonstone Meadow</p>
+        </div>
+        <div class="controls-note">
+          <strong>Move:</strong> A/D or Arrows &nbsp; <strong>Crouch:</strong> S/Down &nbsp; <strong>Jump:</strong> Space/W/Up &nbsp; <strong>Cast:</strong> X &nbsp; <strong>Restart:</strong> R
+        </div>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="game" width="960" height="540" aria-label="Wizard Adventures Level 1 game canvas"></canvas>
+        <div id="touchControls" class="touch-controls standard on-title" aria-label="Touch controls">
+          <div class="touch-dpad" aria-label="Movement buttons">
+            <button class="touch-btn dpad-btn up" data-key="ArrowUp" data-touch="up" aria-label="Up">▲</button>
+            <button class="touch-btn dpad-btn left" data-key="ArrowLeft" data-touch="left" aria-label="Left">◀</button>
+            <button class="touch-btn dpad-btn right" data-key="ArrowRight" data-touch="right" aria-label="Right">▶</button>
+            <button class="touch-btn dpad-btn down" data-key="ArrowDown" data-touch="down" aria-label="Down">▼</button>
+          </div>
+          <div class="touch-actions" aria-label="Action buttons">
+            <button class="touch-btn action-btn button-b" data-key="KeyX" data-touch="buttonB" aria-label="B button">B</button>
+            <button class="touch-btn action-btn button-a" data-key="Space" data-touch="buttonA" aria-label="A button">A</button>
+          </div>
+        </div>
+        <div id="loading" class="overlay">Loading Moonstone Meadow...</div>
+      </div>
+      <div class="notes">
+        <span>This is the real Level 1 foundation build, not a test template.</span>
+        <span>Choose Finn or Nora by clicking/tapping their portrait on the start screen. Keyboard shortcuts F and N still work.</span>
+      </div>
+    </section>
+  </main>
+  <script src="src/level1-data.js"></script>
+  <script src="src/game.js"></script>
+</body>
+</html>
