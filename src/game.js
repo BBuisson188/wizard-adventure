@@ -32,6 +32,10 @@
     resume: { x: 360, y: 228, w: 240, h: 48, label: 'Resume' },
     save: { x: 360, y: 292, w: 240, h: 48, label: 'Save Game' }
   };
+  const levelCompleteButtons = {
+    next: { x: 360, y: 292, w: 240, h: 48, label: 'Next Level' },
+    replay: { x: 360, y: 356, w: 240, h: 42, label: 'Replay Level' }
+  };
   const levels = DATA.levels || [DATA.level];
   const SAVE_KEY = 'wizardAdventuresSave';
   const HIGH_SCORE_KEY = 'wizardAdventuresHighScores';
@@ -610,7 +614,10 @@
     if (player.victoryTimer > 0) {
       player.victoryTimer--;
       player.vx *= 0.92;
-      if (player.victoryTimer === 0) state.mode = 'complete';
+      if (player.victoryTimer === 0) {
+        state.mode = 'complete';
+        if (state.runComplete) submitHighScoreIfNeeded();
+      }
     }
 
     player.vy += 0.78;
@@ -1690,6 +1697,24 @@
     ctx.restore();
   }
 
+  function drawLevelCompletePrompt() {
+    ctx.save();
+    ctx.fillStyle = 'rgba(18, 25, 58, .94)';
+    ctx.strokeStyle = 'rgba(255,255,255,.24)';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.roundRect(320, 232, 320, 190, 18);
+    ctx.fill();
+    ctx.stroke();
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#ffd66e';
+    ctx.font = 'bold 28px Arial';
+    ctx.fillText(`${currentLevel().id} Complete!`, W / 2, 274);
+    drawMenuButton(levelCompleteButtons.next, 'rgba(126, 200, 255, .20)', '#7ec8ff');
+    drawMenuButton(levelCompleteButtons.replay, 'rgba(255, 211, 106, .14)', '#ffd66e');
+    ctx.restore();
+  }
+
   function drawEndOverlay(title, subtitle) {
     ctx.save();
     ctx.fillStyle = 'rgba(6, 10, 25, .65)';
@@ -1703,7 +1728,7 @@
     ctx.fillText(subtitle, W/2, 260);
     ctx.fillStyle = '#dce6ff';
     ctx.font = '20px Arial';
-    const action = state.mode === 'complete' && !state.runComplete ? 'Press Space or Enter for the next level. Press R to replay this one.' : 'Press R to restart';
+    const action = state.mode === 'complete' && !state.runComplete ? 'Tap Next Level to continue.' : 'Press R to restart';
     ctx.fillText(action, W/2, 318);
     ctx.restore();
   }
@@ -1723,6 +1748,8 @@
     if (state.mode === 'paused') drawPauseOverlay();
     if (state.mode === 'complete') {
       drawEndOverlay(state.runComplete ? 'Moonstone Meadow Complete!' : `${currentLevel().id} Complete!`, `Bell bonus: ${state.bellScore} - Score: ${state.score}`);
+      if (!state.runComplete) drawLevelCompletePrompt();
+      else drawHighScores();
     }
     if (state.mode === 'gameover') {
       drawEndOverlay('Game Over', `Score: ${state.score}`);
@@ -1819,6 +1846,18 @@
         e.preventDefault();
         saveGame();
         playTone('power');
+      }
+      return;
+    }
+    if (state.mode === 'complete' && !state.runComplete) {
+      if (pointInBox(p.x, p.y, levelCompleteButtons.next)) {
+        e.preventDefault();
+        advanceLevel();
+        playTone('power');
+      } else if (pointInBox(p.x, p.y, levelCompleteButtons.replay)) {
+        e.preventDefault();
+        resetLevel(state.selectedCharacter, state.levelIndex, true);
+        playTone('coin');
       }
       return;
     }
