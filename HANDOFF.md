@@ -538,7 +538,8 @@ Behavior:
 
 - walks along ground
 - first stomp changes it into shell state
-- shell can slide
+- stationary shell can be kicked from the side without hurting the player
+- shell can slide after being kicked or stomped again
 - sliding shell can defeat enemies
 - sliding shell can hurt player
 
@@ -567,7 +568,7 @@ Behavior:
 - stands on platform or ground
 - throws magic orb projectiles
 - may jump later
-- can be stomped or defeated by fireball
+- can be stomped from above or defeated by fireball
 
 Verify placement and projectile behavior.
 
@@ -624,6 +625,8 @@ Behavior:
 
 - can contain coin, Magic Hat, Spark Wand, Star Charm, or Potion Bottle
 - after hit, becomes spent non-glowing block
+- spawned power-up items should eventually disappear if not collected
+- spawned power-up items should flash progressively faster shortly before disappearing
 
 ### Spent crescent block
 
@@ -712,6 +715,80 @@ Known issues:
 - some background seams are visible
 - some sprites may have checkerboard artifacts or imperfect transparent backgrounds
 - current backgrounds are not true seamless parallax loops
+
+### Sprite asset audit workflow
+
+Use this script to scan character and enemy PNG files for measurable crop and alignment problems:
+
+```powershell
+python scripts/audit_sprites.py
+```
+
+The script writes:
+
+```text
+docs/asset-audit.md
+docs/asset-audit.json
+```
+
+The audit flags edge-contact risk, tiny margins, missing transparency, inconsistent animation frame sizes, baseline drift, and horizontal center drift. It is a triage tool, not a final art judge: if a sprite's feet, hands, hat, or body are actually missing from the PNG, the frame still needs manual art repair, re-extraction from the source sheet, or replacement art.
+
+Use this script to create non-destructive normalized copies with transparent padding and shared animation-frame alignment:
+
+```powershell
+python scripts/normalize_sprites.py
+```
+
+The script writes normalized copies to:
+
+```text
+assets_normalized/
+```
+
+It also writes:
+
+```text
+docs/normalized-sprites.md
+docs/normalized-sprites-manifest.json
+```
+
+The live game still uses `assets/` until references are intentionally changed or original files are deliberately replaced. Review `docs/normalized-sprites.md` before swapping normalized files into the live asset tree.
+
+Current crop workflow:
+
+```powershell
+python scripts/make_character_crop_editor_html.py --plan docs/crop-plan-all-sheets.json --out docs/all-sprite-crop-editor.html
+```
+
+Use `docs/all-sprite-crop-editor.html` to adjust crop boxes for every runtime PNG under `assets/characters`, `assets/enemies`, `assets/items`, and `assets/tiles`. Download or copy the updated JSON back to:
+
+```text
+docs/crop-plan-all-sheets.json
+```
+
+Then extract and clean the assets:
+
+```powershell
+python scripts/extract_character_crops.py --plan docs/crop-plan-all-sheets.json --out-root assets_candidates\all_crops --manifest docs\all-crops-manifest.json
+python scripts/apply_character_crops.py --manifest docs\all-crops-manifest.json --clean-root assets_candidates\all_crops_clean --backup-root assets_backup\assets_before_all_recrop --install
+```
+
+After installing broad recrops, run the live-asset polish pass so gameplay tiles have tight visual canvases and character animation frames share consistent group baselines:
+
+```powershell
+python scripts/postprocess_live_assets.py
+```
+
+This matters because extra transparent padding on moon blocks/old bricks makes adjacent blocks look separated, and uneven character frame canvases make idle/run/jump poses appear to resize or drift in gameplay.
+
+Important raw sheet naming issue:
+
+```text
+assets/raw/basic_enemies_sheet.png contains Nora character frames.
+assets/raw/nora_spritesheet.png contains the Cursed Book, Armored Beetle, and Snapping Vine enemies.
+```
+
+As of the latest crop pass, `docs/crop-plan-all-sheets.json` has named boxes for all 120 current runtime PNGs, including characters, enemies, items, and tiles.
 
 ### Long-term asset direction
 
@@ -976,16 +1053,46 @@ Tasks:
 
 ### Phase 4: build World 1
 
-Possible levels:
+Current first-pass World 1 levels:
 
 ```text
-1-1 Moonstone Meadow
-1-2 Whispering Wells
-1-3 Owlwood Crossing
-1-4 Moonstone Gatehouse
+1-1 Moonstone Meadow - intro/first bell
+1-2 Whispering Wells - wells and snapping vines
+1-3 Owlwood Rise - high paths and double-jump practice
+1-4 Spellbook Scramble - mixed enemy pressure
+1-5 Bellroot Gauntlet - final meadow trial
+1-Boss Grimoire Grove - placeholder Grimoire Guardian boss
 ```
 
-World 1 should gradually introduce all core mechanics.
+World 1 now has a playable rough structure in `src/level1-data.js` through `DATA.levels`. The boss currently reuses scaled Cursed Book art as a placeholder until dedicated Grimoire Guardian art is created and cropped.
+
+World 1 should gradually introduce all core mechanics, then use 1-Boss as the final Moonstone Meadow test. Future passes should tune spacing, enemy pacing, rewards, and boss art rather than replacing the architecture.
+
+Block placement rule:
+
+- Moon/crescent blocks and breakable bricks must not sit directly on the ground or directly over raised platforms.
+- `src/level1-data.js` currently normalizes every block against the nearest solid surface below it.
+- Clearance under a block should stay between 96 and 154 pixels, with a target of 122 pixels.
+- This applies to main ground and raised platforms, so a player can walk underneath blocks while still being able to hit them from below.
+- If future level edits add new block rows, run a quick clearance audit before shipping the change.
+
+Pause/save/high-score notes:
+
+- The browser page has a simple topbar Pause button.
+- `P` or `Esc` also pauses during gameplay.
+- The pause overlay has Resume and Save Game buttons.
+- Saves are local to the current browser through `localStorage` using the key `wizardAdventuresSave`.
+- The title screen shows Resume Saved Game when a valid local save exists.
+- Game over prompts for a local high-score name and stores the scoreboard in `localStorage` under `wizardAdventuresHighScores`.
+- This is intentionally browser-local for now; future publishing may need export/import or account/cloud saves.
+
+iPad/Safari touch notes:
+
+- The game page disables double-tap zoom on the game surface with viewport, CSS `touch-action: none`, and JS default-prevention on canvas/touch gesture events.
+- Keep this protection in place because rapid double-tapping jump on iPad Safari can otherwise zoom the page.
+- A Full Screen button is available when the browser exposes `requestFullscreen` for the game container.
+- Safari cannot be forced into fullscreen without a user gesture, and some iPad Safari versions may only support true standalone fullscreen when the site is added to the Home Screen as a web app.
+- When fullscreen is active, the same button becomes an `X` exit control.
 
 ### Phase 5: expand into full game
 
@@ -1071,6 +1178,72 @@ git@github.com:BBuisson188/wizard-adventure.git
 ```
 
 On May 7, 2026, the folder was started as a normal local Git worktree for that repo using the SSH remote above. Future publishing should use normal local Git over SSH from this folder, with Windows OpenSSH (`C:\Windows\System32\OpenSSH\ssh.exe`) rather than HTTPS credentials or GitHub API publishing.
+
+### Windows Git / Codex Permission Recovery
+
+This repo is now properly connected to GitHub over SSH.
+
+Remote:
+
+```text
+git@github.com:BBuisson188/wizard-adventure.git
+```
+
+Branch:
+
+```text
+main tracks origin/main
+```
+
+Future publishing should use normal local Git:
+
+```powershell
+git add .
+git commit -m "message"
+git pull --rebase
+git push
+```
+
+Do not use GitHub API publishing unless local Git is truly impossible. Do not use HTTPS credentials.
+
+If Codex hits Windows Git write failures such as ACL, `index.lock`, or `FETCH_HEAD` permission errors, Codex should remind Beau to run this from normal local PowerShell:
+
+```powershell
+cd "C:\Users\bbuis\Local Docs\Codex\Wizard-Adventure"
+
+icacls .git /reset /T
+icacls .git /inheritance:d /T
+
+git status
+```
+
+If `git status` works, continue the normal workflow:
+
+```powershell
+git add .
+git commit -m "message"
+git pull --rebase
+git push
+```
+
+If a rebase conflict is already in progress, use:
+
+```powershell
+git add HANDOFF.md src/game.js src/level1-data.js
+git rebase --continue
+git status
+git push -u origin main
+```
+
+If Git opens the commit message editor during `git rebase --continue`, it may be Vim. To save and exit Vim:
+
+1. Press `Esc`
+2. Type `:wq`
+3. Press Enter
+
+LF -> CRLF warnings on Windows are normal and can usually be ignored.
+
+If Git opens a long output pager and shows `(END)`, press `q` to return to PowerShell.
 
 ---
 

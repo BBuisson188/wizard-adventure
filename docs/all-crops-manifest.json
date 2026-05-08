@@ -1,0 +1,1806 @@
+{
+  "plan": "docs\\crop-plan-all-sheets.json",
+  "out_root": "assets_candidates\\all_crops",
+  "files": [
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/baby_idle_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/baby_idle_01.png",
+      "crop": [
+        40,
+        150,
+        120,
+        220
+      ],
+      "size": [
+        120,
+        220
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/baby_idle_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/baby_idle_02.png",
+      "crop": [
+        175,
+        150,
+        125,
+        220
+      ],
+      "size": [
+        125,
+        220
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/baby_run_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/baby_run_01.png",
+      "crop": [
+        327,
+        150,
+        170,
+        220
+      ],
+      "size": [
+        170,
+        220
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/baby_run_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/baby_run_02.png",
+      "crop": [
+        510,
+        150,
+        170,
+        220
+      ],
+      "size": [
+        170,
+        220
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/baby_run_03.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/baby_run_03.png",
+      "crop": [
+        669,
+        148,
+        170,
+        220
+      ],
+      "size": [
+        170,
+        220
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/baby_jump.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/baby_jump.png",
+      "crop": [
+        830,
+        130,
+        155,
+        245
+      ],
+      "size": [
+        155,
+        245
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/baby_fall.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/baby_fall.png",
+      "crop": [
+        975,
+        132,
+        160,
+        245
+      ],
+      "size": [
+        160,
+        245
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/baby_hurt.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/baby_hurt.png",
+      "crop": [
+        1125,
+        144,
+        155,
+        230
+      ],
+      "size": [
+        155,
+        230
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/baby_victory.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/baby_victory.png",
+      "crop": [
+        1276,
+        139,
+        150,
+        240
+      ],
+      "size": [
+        150,
+        240
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/old_idle_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/old_idle_01.png",
+      "crop": [
+        31,
+        405,
+        150,
+        245
+      ],
+      "size": [
+        150,
+        245
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/old_idle_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/old_idle_02.png",
+      "crop": [
+        179,
+        405,
+        155,
+        245
+      ],
+      "size": [
+        155,
+        245
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/old_run_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/old_run_01.png",
+      "crop": [
+        324,
+        408,
+        178,
+        242
+      ],
+      "size": [
+        178,
+        242
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/old_run_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/old_run_02.png",
+      "crop": [
+        498,
+        404,
+        177,
+        247
+      ],
+      "size": [
+        177,
+        247
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/old_run_03.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/old_run_03.png",
+      "crop": [
+        674,
+        406,
+        160,
+        245
+      ],
+      "size": [
+        160,
+        245
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/old_jump.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/old_jump.png",
+      "crop": [
+        832,
+        387,
+        150,
+        265
+      ],
+      "size": [
+        150,
+        265
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/old_fall.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/old_fall.png",
+      "crop": [
+        980,
+        399,
+        160,
+        253
+      ],
+      "size": [
+        160,
+        253
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/old_hurt.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/old_hurt.png",
+      "crop": [
+        1128,
+        403,
+        150,
+        250
+      ],
+      "size": [
+        150,
+        250
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/old_victory.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/old_victory.png",
+      "crop": [
+        1271,
+        408,
+        150,
+        244
+      ],
+      "size": [
+        150,
+        244
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/white_idle_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/white_idle_01.png",
+      "crop": [
+        20,
+        725,
+        150,
+        230
+      ],
+      "size": [
+        150,
+        230
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/white_idle_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/white_idle_02.png",
+      "crop": [
+        168,
+        725,
+        146,
+        232
+      ],
+      "size": [
+        146,
+        232
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/white_run_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/white_run_01.png",
+      "crop": [
+        310,
+        727,
+        163,
+        232
+      ],
+      "size": [
+        163,
+        232
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/white_run_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/white_run_02.png",
+      "crop": [
+        471,
+        727,
+        163,
+        230
+      ],
+      "size": [
+        163,
+        230
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/white_run_03.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/white_run_03.png",
+      "crop": [
+        630,
+        727,
+        129,
+        232
+      ],
+      "size": [
+        129,
+        232
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/white_jump.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/white_jump.png",
+      "crop": [
+        756,
+        682,
+        143,
+        275
+      ],
+      "size": [
+        143,
+        275
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/white_fall.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/white_fall.png",
+      "crop": [
+        895,
+        692,
+        147,
+        265
+      ],
+      "size": [
+        147,
+        265
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/white_hurt.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/white_hurt.png",
+      "crop": [
+        1032,
+        722,
+        136,
+        235
+      ],
+      "size": [
+        136,
+        235
+      ]
+    },
+    {
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "target": "assets/characters/finn/white_victory.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/finn/white_victory.png",
+      "crop": [
+        1158,
+        697,
+        187,
+        261
+      ],
+      "size": [
+        187,
+        261
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/baby_idle_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/baby_idle_01.png",
+      "crop": [
+        35,
+        128,
+        132,
+        214
+      ],
+      "size": [
+        132,
+        214
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/baby_idle_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/baby_idle_02.png",
+      "crop": [
+        186,
+        147,
+        140,
+        191
+      ],
+      "size": [
+        140,
+        191
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/baby_run_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/baby_run_01.png",
+      "crop": [
+        353,
+        152,
+        139,
+        188
+      ],
+      "size": [
+        139,
+        188
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/baby_run_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/baby_run_02.png",
+      "crop": [
+        515,
+        152,
+        153,
+        189
+      ],
+      "size": [
+        153,
+        189
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/baby_run_03.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/baby_run_03.png",
+      "crop": [
+        694,
+        152,
+        144,
+        191
+      ],
+      "size": [
+        144,
+        191
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/baby_jump.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/baby_jump.png",
+      "crop": [
+        850,
+        104,
+        133,
+        240
+      ],
+      "size": [
+        133,
+        240
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/baby_fall.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/baby_fall.png",
+      "crop": [
+        992,
+        104,
+        132,
+        243
+      ],
+      "size": [
+        132,
+        243
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/baby_hurt.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/baby_hurt.png",
+      "crop": [
+        1135,
+        147,
+        144,
+        202
+      ],
+      "size": [
+        144,
+        202
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/baby_victory.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/baby_victory.png",
+      "crop": [
+        1277,
+        122,
+        148,
+        228
+      ],
+      "size": [
+        148,
+        228
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/old_idle_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/old_idle_01.png",
+      "crop": [
+        23,
+        407,
+        153,
+        227
+      ],
+      "size": [
+        153,
+        227
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/old_idle_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/old_idle_02.png",
+      "crop": [
+        177,
+        408,
+        166,
+        228
+      ],
+      "size": [
+        166,
+        228
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/old_run_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/old_run_01.png",
+      "crop": [
+        340,
+        408,
+        177,
+        228
+      ],
+      "size": [
+        177,
+        228
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/old_run_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/old_run_02.png",
+      "crop": [
+        513,
+        407,
+        160,
+        230
+      ],
+      "size": [
+        160,
+        230
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/old_run_03.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/old_run_03.png",
+      "crop": [
+        671,
+        407,
+        157,
+        231
+      ],
+      "size": [
+        157,
+        231
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/old_jump.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/old_jump.png",
+      "crop": [
+        825,
+        370,
+        155,
+        270
+      ],
+      "size": [
+        155,
+        270
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/old_fall.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/old_fall.png",
+      "crop": [
+        977,
+        373,
+        152,
+        268
+      ],
+      "size": [
+        152,
+        268
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/old_hurt.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/old_hurt.png",
+      "crop": [
+        1125,
+        410,
+        147,
+        232
+      ],
+      "size": [
+        147,
+        232
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/old_victory.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/old_victory.png",
+      "crop": [
+        1276,
+        393,
+        152,
+        250
+      ],
+      "size": [
+        152,
+        250
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_idle_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_idle_01.png",
+      "crop": [
+        15,
+        725,
+        162,
+        212
+      ],
+      "size": [
+        162,
+        212
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_idle_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_idle_02.png",
+      "crop": [
+        173,
+        724,
+        150,
+        215
+      ],
+      "size": [
+        150,
+        215
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_run_01.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_run_01.png",
+      "crop": [
+        319,
+        724,
+        156,
+        218
+      ],
+      "size": [
+        156,
+        218
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_run_02.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_run_02.png",
+      "crop": [
+        472,
+        722,
+        165,
+        221
+      ],
+      "size": [
+        165,
+        221
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_run_03.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_run_03.png",
+      "crop": [
+        634,
+        722,
+        157,
+        223
+      ],
+      "size": [
+        157,
+        223
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_jump.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_jump.png",
+      "crop": [
+        787,
+        671,
+        133,
+        274
+      ],
+      "size": [
+        133,
+        274
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_fall.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_fall.png",
+      "crop": [
+        917,
+        680,
+        140,
+        264
+      ],
+      "size": [
+        140,
+        264
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_hurt.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_hurt.png",
+      "crop": [
+        1052,
+        722,
+        121,
+        223
+      ],
+      "size": [
+        121,
+        223
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_victory.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_victory.png",
+      "crop": [
+        1170,
+        709,
+        135,
+        236
+      ],
+      "size": [
+        135,
+        236
+      ]
+    },
+    {
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "target": "assets/characters/nora/white_cast_fireball.png",
+      "candidate": "assets_candidates/all_crops/assets/characters/nora/white_cast_fireball.png",
+      "crop": [
+        1289,
+        787,
+        157,
+        159
+      ],
+      "size": [
+        157,
+        159
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/cursed_book/walk_01.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/cursed_book/walk_01.png",
+      "crop": [
+        50,
+        67,
+        208,
+        248
+      ],
+      "size": [
+        208,
+        248
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/cursed_book/walk_02.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/cursed_book/walk_02.png",
+      "crop": [
+        290,
+        68,
+        214,
+        251
+      ],
+      "size": [
+        214,
+        251
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/cursed_book/angry_idle.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/cursed_book/angry_idle.png",
+      "crop": [
+        543,
+        40,
+        209,
+        280
+      ],
+      "size": [
+        209,
+        280
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/cursed_book/squashed.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/cursed_book/squashed.png",
+      "crop": [
+        777,
+        177,
+        245,
+        141
+      ],
+      "size": [
+        245,
+        141
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/cursed_book/fireball_hit.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/cursed_book/fireball_hit.png",
+      "crop": [
+        1033,
+        74,
+        300,
+        245
+      ],
+      "size": [
+        300,
+        245
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/armored_beetle/walk_01.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/armored_beetle/walk_01.png",
+      "crop": [
+        31,
+        384,
+        231,
+        188
+      ],
+      "size": [
+        231,
+        188
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/armored_beetle/walk_02.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/armored_beetle/walk_02.png",
+      "crop": [
+        290,
+        393,
+        230,
+        180
+      ],
+      "size": [
+        230,
+        180
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/armored_beetle/shell.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/armored_beetle/shell.png",
+      "crop": [
+        554,
+        433,
+        216,
+        140
+      ],
+      "size": [
+        216,
+        140
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/armored_beetle/slide.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/armored_beetle/slide.png",
+      "crop": [
+        795,
+        428,
+        329,
+        146
+      ],
+      "size": [
+        329,
+        146
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/armored_beetle/flipped.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/armored_beetle/flipped.png",
+      "crop": [
+        1143,
+        413,
+        242,
+        166
+      ],
+      "size": [
+        242,
+        166
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/snapping_vine/well_empty.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/snapping_vine/well_empty.png",
+      "crop": [
+        30,
+        741,
+        231,
+        193
+      ],
+      "size": [
+        231,
+        193
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/snapping_vine/rise_01.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/snapping_vine/rise_01.png",
+      "crop": [
+        273,
+        689,
+        226,
+        247
+      ],
+      "size": [
+        226,
+        247
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/snapping_vine/rise_02.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/snapping_vine/rise_02.png",
+      "crop": [
+        506,
+        628,
+        224,
+        310
+      ],
+      "size": [
+        224,
+        310
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/snapping_vine/attack.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/snapping_vine/attack.png",
+      "crop": [
+        759,
+        607,
+        238,
+        331
+      ],
+      "size": [
+        238,
+        331
+      ]
+    },
+    {
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "target": "assets/enemies/snapping_vine/retreat.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/snapping_vine/retreat.png",
+      "crop": [
+        1015,
+        742,
+        238,
+        197
+      ],
+      "size": [
+        238,
+        197
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/goblin_spell_thrower/idle.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/goblin_spell_thrower/idle.png",
+      "crop": [
+        83,
+        116,
+        262,
+        272
+      ],
+      "size": [
+        262,
+        272
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/goblin_spell_thrower/jump.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/goblin_spell_thrower/jump.png",
+      "crop": [
+        347,
+        61,
+        254,
+        326
+      ],
+      "size": [
+        254,
+        326
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/goblin_spell_thrower/throw.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/goblin_spell_thrower/throw.png",
+      "crop": [
+        625,
+        121,
+        378,
+        267
+      ],
+      "size": [
+        378,
+        267
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/goblin_spell_thrower/hurt.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/goblin_spell_thrower/hurt.png",
+      "crop": [
+        999,
+        90,
+        244,
+        298
+      ],
+      "size": [
+        244,
+        298
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/goblin_spell_thrower/orb_01.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/goblin_spell_thrower/orb_01.png",
+      "crop": [
+        80,
+        405,
+        210,
+        125
+      ],
+      "size": [
+        210,
+        125
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/goblin_spell_thrower/orb_02.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/goblin_spell_thrower/orb_02.png",
+      "crop": [
+        323,
+        402,
+        273,
+        136
+      ],
+      "size": [
+        273,
+        136
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/cursed_scroll_rocket/rocket_01.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/cursed_scroll_rocket/rocket_01.png",
+      "crop": [
+        590,
+        445,
+        227,
+        254
+      ],
+      "size": [
+        227,
+        254
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/cursed_scroll_rocket/rocket_02.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/cursed_scroll_rocket/rocket_02.png",
+      "crop": [
+        811,
+        422,
+        282,
+        293
+      ],
+      "size": [
+        282,
+        293
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/cursed_scroll_rocket/launcher.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/cursed_scroll_rocket/launcher.png",
+      "crop": [
+        1099,
+        561,
+        214,
+        135
+      ],
+      "size": [
+        214,
+        135
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/owl_helper/perched.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/owl_helper/perched.png",
+      "crop": [
+        71,
+        758,
+        207,
+        239
+      ],
+      "size": [
+        207,
+        239
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/owl_helper/flap_01.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/owl_helper/flap_01.png",
+      "crop": [
+        308,
+        773,
+        282,
+        219
+      ],
+      "size": [
+        282,
+        219
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/owl_helper/flap_02.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/owl_helper/flap_02.png",
+      "crop": [
+        591,
+        782,
+        274,
+        202
+      ],
+      "size": [
+        274,
+        202
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/owl_helper/point.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/owl_helper/point.png",
+      "crop": [
+        870,
+        769,
+        240,
+        233
+      ],
+      "size": [
+        240,
+        233
+      ]
+    },
+    {
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "target": "assets/enemies/owl_helper/hint_sign.png",
+      "candidate": "assets_candidates/all_crops/assets/enemies/owl_helper/hint_sign.png",
+      "crop": [
+        1133,
+        763,
+        260,
+        257
+      ],
+      "size": [
+        260,
+        257
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/coin_01.png",
+      "candidate": "assets_candidates/all_crops/assets/items/coin_01.png",
+      "crop": [
+        156,
+        69,
+        178,
+        187
+      ],
+      "size": [
+        178,
+        187
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/coin_02.png",
+      "candidate": "assets_candidates/all_crops/assets/items/coin_02.png",
+      "crop": [
+        390,
+        75,
+        150,
+        175
+      ],
+      "size": [
+        150,
+        175
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/coin_03.png",
+      "candidate": "assets_candidates/all_crops/assets/items/coin_03.png",
+      "crop": [
+        606,
+        75,
+        110,
+        170
+      ],
+      "size": [
+        110,
+        170
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/coin_04.png",
+      "candidate": "assets_candidates/all_crops/assets/items/coin_04.png",
+      "crop": [
+        779,
+        77,
+        153,
+        168
+      ],
+      "size": [
+        153,
+        168
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/magic_hat.png",
+      "candidate": "assets_candidates/all_crops/assets/items/magic_hat.png",
+      "crop": [
+        1007,
+        41,
+        259,
+        239
+      ],
+      "size": [
+        259,
+        239
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/spark_wand.png",
+      "candidate": "assets_candidates/all_crops/assets/items/spark_wand.png",
+      "crop": [
+        167,
+        289,
+        215,
+        278
+      ],
+      "size": [
+        215,
+        278
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/star_charm.png",
+      "candidate": "assets_candidates/all_crops/assets/items/star_charm.png",
+      "crop": [
+        401,
+        293,
+        257,
+        270
+      ],
+      "size": [
+        257,
+        270
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/potion_1up.png",
+      "candidate": "assets_candidates/all_crops/assets/items/potion_1up.png",
+      "crop": [
+        710,
+        295,
+        244,
+        268
+      ],
+      "size": [
+        244,
+        268
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/stolen_spell_book.png",
+      "candidate": "assets_candidates/all_crops/assets/items/stolen_spell_book.png",
+      "crop": [
+        1010,
+        297,
+        266,
+        276
+      ],
+      "size": [
+        266,
+        276
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/fireball_01.png",
+      "candidate": "assets_candidates/all_crops/assets/items/fireball_01.png",
+      "crop": [
+        144,
+        600,
+        188,
+        193
+      ],
+      "size": [
+        188,
+        193
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/fireball_02.png",
+      "candidate": "assets_candidates/all_crops/assets/items/fireball_02.png",
+      "crop": [
+        348,
+        599,
+        221,
+        196
+      ],
+      "size": [
+        221,
+        196
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/fireball_03.png",
+      "candidate": "assets_candidates/all_crops/assets/items/fireball_03.png",
+      "crop": [
+        566,
+        598,
+        262,
+        198
+      ],
+      "size": [
+        262,
+        198
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/sparkle_hit_01.png",
+      "candidate": "assets_candidates/all_crops/assets/items/sparkle_hit_01.png",
+      "crop": [
+        842,
+        595,
+        205,
+        202
+      ],
+      "size": [
+        205,
+        202
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/sparkle_hit_02.png",
+      "candidate": "assets_candidates/all_crops/assets/items/sparkle_hit_02.png",
+      "crop": [
+        1045,
+        595,
+        216,
+        204
+      ],
+      "size": [
+        216,
+        204
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/hud_coin.png",
+      "candidate": "assets_candidates/all_crops/assets/items/hud_coin.png",
+      "crop": [
+        210,
+        830,
+        200,
+        200
+      ],
+      "size": [
+        200,
+        200
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/hud_potion.png",
+      "candidate": "assets_candidates/all_crops/assets/items/hud_potion.png",
+      "crop": [
+        485,
+        830,
+        205,
+        200
+      ],
+      "size": [
+        205,
+        200
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/hud_wand.png",
+      "candidate": "assets_candidates/all_crops/assets/items/hud_wand.png",
+      "crop": [
+        758,
+        830,
+        205,
+        200
+      ],
+      "size": [
+        205,
+        200
+      ]
+    },
+    {
+      "sheet": "assets/raw/items_powerups_sheet.png",
+      "target": "assets/items/hud_star.png",
+      "candidate": "assets_candidates/all_crops/assets/items/hud_star.png",
+      "crop": [
+        1015,
+        830,
+        210,
+        200
+      ],
+      "size": [
+        210,
+        200
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/old_brick_block.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/old_brick_block.png",
+      "crop": [
+        84,
+        80,
+        293,
+        164
+      ],
+      "size": [
+        293,
+        164
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/broken_brick_fragments.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/broken_brick_fragments.png",
+      "crop": [
+        420,
+        85,
+        385,
+        160
+      ],
+      "size": [
+        385,
+        160
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/crescent_block_glowing.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/crescent_block_glowing.png",
+      "crop": [
+        836,
+        45,
+        218,
+        232
+      ],
+      "size": [
+        218,
+        232
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/crescent_block_spent.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/crescent_block_spent.png",
+      "crop": [
+        1113,
+        54,
+        218,
+        227
+      ],
+      "size": [
+        218,
+        227
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/ground_grass_span.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/ground_grass_span.png",
+      "crop": [
+        65,
+        305,
+        726,
+        105
+      ],
+      "size": [
+        726,
+        105
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/ground_stone_span.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/ground_stone_span.png",
+      "crop": [
+        69,
+        442,
+        725,
+        108
+      ],
+      "size": [
+        725,
+        108
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/ground_left_edge.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/ground_left_edge.png",
+      "crop": [
+        58,
+        570,
+        232,
+        130
+      ],
+      "size": [
+        232,
+        130
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/ground_floating_platform.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/ground_floating_platform.png",
+      "crop": [
+        320,
+        597,
+        271,
+        140
+      ],
+      "size": [
+        271,
+        140
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/ground_right_edge.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/ground_right_edge.png",
+      "crop": [
+        612,
+        570,
+        195,
+        136
+      ],
+      "size": [
+        195,
+        136
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/stone_well_flowers.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/stone_well_flowers.png",
+      "crop": [
+        834,
+        310,
+        260,
+        197
+      ],
+      "size": [
+        260,
+        197
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/stone_well_empty.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/stone_well_empty.png",
+      "crop": [
+        1098,
+        309,
+        259,
+        199
+      ],
+      "size": [
+        259,
+        199
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/mossy_rock.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/mossy_rock.png",
+      "crop": [
+        828,
+        565,
+        167,
+        131
+      ],
+      "size": [
+        167,
+        131
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/shrub.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/shrub.png",
+      "crop": [
+        1004,
+        576,
+        176,
+        152
+      ],
+      "size": [
+        176,
+        152
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/signpost.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/signpost.png",
+      "crop": [
+        1198,
+        530,
+        184,
+        212
+      ],
+      "size": [
+        184,
+        212
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/floating_bell_tower.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/floating_bell_tower.png",
+      "crop": [
+        139,
+        694,
+        223,
+        360
+      ],
+      "size": [
+        223,
+        360
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/bell_rope.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/bell_rope.png",
+      "crop": [
+        470,
+        770,
+        70,
+        270
+      ],
+      "size": [
+        70,
+        270
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/bell_ring_effect.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/bell_ring_effect.png",
+      "crop": [
+        552,
+        769,
+        259,
+        243
+      ],
+      "size": [
+        259,
+        243
+      ]
+    },
+    {
+      "sheet": "assets/raw/tiles_props_sheet.png",
+      "target": "assets/tiles/checkpoint_banner.png",
+      "candidate": "assets_candidates/all_crops/assets/tiles/checkpoint_banner.png",
+      "crop": [
+        820,
+        735,
+        210,
+        300
+      ],
+      "size": [
+        210,
+        300
+      ]
+    }
+  ]
+}

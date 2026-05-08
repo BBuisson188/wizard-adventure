@@ -1,0 +1,156 @@
+{
+  "plan": "docs\\crop-plan-grimoire-boss.json",
+  "out_root": "assets_candidates\\grimoire_boss_crops",
+  "files": [
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/idle_closed.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/idle_closed.png",
+      "crop": [
+        0,
+        18,
+        419,
+        390
+      ],
+      "size": [
+        419,
+        390
+      ]
+    },
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/idle_open.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/idle_open.png",
+      "crop": [
+        377,
+        17,
+        496,
+        390
+      ],
+      "size": [
+        496,
+        390
+      ]
+    },
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/roar.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/roar.png",
+      "crop": [
+        891,
+        14,
+        495,
+        391
+      ],
+      "size": [
+        495,
+        391
+      ]
+    },
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/cast_moon.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/cast_moon.png",
+      "crop": [
+        0,
+        421,
+        495,
+        390
+      ],
+      "size": [
+        495,
+        390
+      ]
+    },
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/summon_pages.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/summon_pages.png",
+      "crop": [
+        461,
+        388,
+        491,
+        395
+      ],
+      "size": [
+        491,
+        395
+      ]
+    },
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/stunned.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/stunned.png",
+      "crop": [
+        0,
+        768,
+        472,
+        315
+      ],
+      "size": [
+        472,
+        256
+      ]
+    },
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/hit.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/hit.png",
+      "crop": [
+        937,
+        415,
+        497,
+        390
+      ],
+      "size": [
+        497,
+        390
+      ]
+    },
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/defeated.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/defeated.png",
+      "crop": [
+        407,
+        817,
+        491,
+        316
+      ],
+      "size": [
+        491,
+        207
+      ]
+    },
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/moon_projectile.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/moon_projectile.png",
+      "crop": [
+        884,
+        852,
+        179,
+        186
+      ],
+      "size": [
+        179,
+        172
+      ]
+    },
+    {
+      "sheet": "assets/raw/Grimoire-sprite.png",
+      "target": "assets/enemies/grimoire_guardian/crescent_projectile.png",
+      "candidate": "assets_candidates/grimoire_boss_crops/assets/enemies/grimoire_guardian/crescent_projectile.png",
+      "crop": [
+        1097,
+        851,
+        274,
+        190
+      ],
+      "size": [
+        274,
+        173
+      ]
+    }
+  ]
+}

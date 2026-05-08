@@ -1,0 +1,95 @@
+{
+  "padding": 10,
+  "alpha_threshold": 16,
+  "min_pixels": 250,
+  "records": [
+    {
+      "id": 1,
+      "sheet": "assets/raw/finn_spritesheet.png",
+      "path": "assets_candidates/sheet_components/finn_spritesheet/001_finn_spritesheet_0_0_1447_1085.png",
+      "component_bbox": [
+        0,
+        0,
+        1447,
+        1085
+      ],
+      "crop_box": [
+        0,
+        0,
+        1447,
+        1085
+      ],
+      "output_size": [
+        1448,
+        1086
+      ],
+      "pixel_count": 1572528
+    },
+    {
+      "id": 1,
+      "sheet": "assets/raw/nora_spritesheet.png",
+      "path": "assets_candidates/sheet_components/nora_spritesheet/001_nora_spritesheet_0_0_1447_1085.png",
+      "component_bbox": [
+        0,
+        0,
+        1447,
+        1085
+      ],
+      "crop_box": [
+        0,
+        0,
+        1447,
+        1085
+      ],
+      "output_size": [
+        1448,
+        1086
+      ],
+      "pixel_count": 1572528
+    },
+    {
+      "id": 1,
+      "sheet": "assets/raw/basic_enemies_sheet.png",
+      "path": "assets_candidates/sheet_components/basic_enemies_sheet/001_basic_enemies_sheet_0_0_1447_1085.png",
+      "component_bbox": [
+        0,
+        0,
+        1447,
+        1085
+      ],
+      "crop_box": [
+        0,
+        0,
+        1447,
+        1085
+      ],
+      "output_size": [
+        1448,
+        1086
+      ],
+      "pixel_count": 1572528
+    },
+    {
+      "id": 1,
+      "sheet": "assets/raw/advanced_enemies_owl_sheet.png",
+      "path": "assets_candidates/sheet_components/advanced_enemies_owl_sheet/001_advanced_enemies_owl_sheet_0_0_1447_1085.png",
+      "component_bbox": [
+        0,
+        0,
+        1447,
+        1085
+      ],
+      "crop_box": [
+        0,
+        0,
+        1447,
+        1085
+      ],
+      "output_size": [
+        1448,
+        1086
+      ],
+      "pixel_count": 1572528
+    }
+  ]
+}

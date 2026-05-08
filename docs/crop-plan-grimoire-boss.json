@@ -1,0 +1,74 @@
+{
+  "notes": [
+    "Focused crop plan for the Grimoire Guardian boss sheet.",
+    "Raw sheet: assets/raw/Grimoire-sprite.png.",
+    "Starter boxes are approximate and intended to be adjusted visually in docs/grimoire-boss-crop-editor.html.",
+    "Target files can be installed later under assets/enemies/grimoire_guardian/ after review."
+  ],
+  "sheets": {
+    "assets/raw/Grimoire-sprite.png": {
+      "targets": {
+        "assets/enemies/grimoire_guardian/idle_closed.png": [
+          0,
+          18,
+          419,
+          390
+        ],
+        "assets/enemies/grimoire_guardian/idle_open.png": [
+          377,
+          17,
+          496,
+          390
+        ],
+        "assets/enemies/grimoire_guardian/roar.png": [
+          891,
+          14,
+          495,
+          391
+        ],
+        "assets/enemies/grimoire_guardian/cast_moon.png": [
+          0,
+          421,
+          495,
+          390
+        ],
+        "assets/enemies/grimoire_guardian/summon_pages.png": [
+          461,
+          388,
+          491,
+          395
+        ],
+        "assets/enemies/grimoire_guardian/stunned.png": [
+          0,
+          768,
+          472,
+          315
+        ],
+        "assets/enemies/grimoire_guardian/hit.png": [
+          937,
+          415,
+          497,
+          390
+        ],
+        "assets/enemies/grimoire_guardian/defeated.png": [
+          407,
+          817,
+          491,
+          316
+        ],
+        "assets/enemies/grimoire_guardian/moon_projectile.png": [
+          884,
+          852,
+          179,
+          186
+        ],
+        "assets/enemies/grimoire_guardian/crescent_projectile.png": [
+          1097,
+          851,
+          274,
+          190
+        ]
+      }
+    }
+  }
+}

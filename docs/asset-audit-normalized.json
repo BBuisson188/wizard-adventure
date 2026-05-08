@@ -1,0 +1,2274 @@
+{
+  "files_scanned": 84,
+  "failures": [],
+  "audits": [
+    {
+      "path": "assets/characters/finn/baby_fall.png",
+      "group": "characters/finn/baby/fall",
+      "width": 138,
+      "height": 181,
+      "bbox": [
+        12,
+        12,
+        125,
+        168
+      ],
+      "content_width": 114,
+      "content_height": 157,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 68.5,
+      "baseline_y": 168,
+      "opaque_pixels": 8170,
+      "alpha_pixels": 8170,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/baby_hurt.png",
+      "group": "characters/finn/baby/hurt",
+      "width": 177,
+      "height": 169,
+      "bbox": [
+        12,
+        12,
+        164,
+        156
+      ],
+      "content_width": 153,
+      "content_height": 145,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 88.0,
+      "baseline_y": 156,
+      "opaque_pixels": 9084,
+      "alpha_pixels": 9084,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/baby_idle_01.png",
+      "group": "characters/finn/baby/idle",
+      "width": 108,
+      "height": 144,
+      "bbox": [
+        12,
+        12,
+        95,
+        131
+      ],
+      "content_width": 84,
+      "content_height": 120,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 53.5,
+      "baseline_y": 131,
+      "opaque_pixels": 7181,
+      "alpha_pixels": 7181,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/baby_idle_02.png",
+      "group": "characters/finn/baby/idle",
+      "width": 108,
+      "height": 144,
+      "bbox": [
+        18,
+        12,
+        90,
+        131
+      ],
+      "content_width": 73,
+      "content_height": 120,
+      "margins": {
+        "left": 18,
+        "right": 17,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 54.0,
+      "baseline_y": 131,
+      "opaque_pixels": 6809,
+      "alpha_pixels": 6809,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/baby_jump.png",
+      "group": "characters/finn/baby/jump",
+      "width": 140,
+      "height": 175,
+      "bbox": [
+        12,
+        12,
+        127,
+        162
+      ],
+      "content_width": 116,
+      "content_height": 151,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 69.5,
+      "baseline_y": 162,
+      "opaque_pixels": 10011,
+      "alpha_pixels": 10011,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/baby_run_01.png",
+      "group": "characters/finn/baby/run",
+      "width": 133,
+      "height": 131,
+      "bbox": [
+        12,
+        12,
+        120,
+        118
+      ],
+      "content_width": 109,
+      "content_height": 107,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 66.0,
+      "baseline_y": 118,
+      "opaque_pixels": 7405,
+      "alpha_pixels": 7405,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/baby_run_02.png",
+      "group": "characters/finn/baby/run",
+      "width": 133,
+      "height": 131,
+      "bbox": [
+        19,
+        14,
+        113,
+        118
+      ],
+      "content_width": 95,
+      "content_height": 105,
+      "margins": {
+        "left": 19,
+        "right": 19,
+        "top": 14,
+        "bottom": 12
+      },
+      "center_x": 66.0,
+      "baseline_y": 118,
+      "opaque_pixels": 7184,
+      "alpha_pixels": 7184,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/baby_run_03.png",
+      "group": "characters/finn/baby/run",
+      "width": 133,
+      "height": 131,
+      "bbox": [
+        19,
+        20,
+        113,
+        118
+      ],
+      "content_width": 95,
+      "content_height": 99,
+      "margins": {
+        "left": 19,
+        "right": 19,
+        "top": 20,
+        "bottom": 12
+      },
+      "center_x": 66.0,
+      "baseline_y": 118,
+      "opaque_pixels": 6445,
+      "alpha_pixels": 6445,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/baby_victory.png",
+      "group": "characters/finn/baby/victory",
+      "width": 125,
+      "height": 151,
+      "bbox": [
+        12,
+        12,
+        112,
+        138
+      ],
+      "content_width": 101,
+      "content_height": 127,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 62.0,
+      "baseline_y": 138,
+      "opaque_pixels": 8038,
+      "alpha_pixels": 8038,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/old_fall.png",
+      "group": "characters/finn/old/fall",
+      "width": 187,
+      "height": 198,
+      "bbox": [
+        12,
+        12,
+        174,
+        185
+      ],
+      "content_width": 163,
+      "content_height": 174,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 93.0,
+      "baseline_y": 185,
+      "opaque_pixels": 12122,
+      "alpha_pixels": 12122,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/old_hurt.png",
+      "group": "characters/finn/old/hurt",
+      "width": 187,
+      "height": 220,
+      "bbox": [
+        12,
+        12,
+        174,
+        207
+      ],
+      "content_width": 163,
+      "content_height": 196,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 93.0,
+      "baseline_y": 207,
+      "opaque_pixels": 14280,
+      "alpha_pixels": 14280,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/old_idle_01.png",
+      "group": "characters/finn/old/idle",
+      "width": 179,
+      "height": 215,
+      "bbox": [
+        24,
+        15,
+        154,
+        202
+      ],
+      "content_width": 131,
+      "content_height": 188,
+      "margins": {
+        "left": 24,
+        "right": 24,
+        "top": 15,
+        "bottom": 12
+      },
+      "center_x": 89.0,
+      "baseline_y": 202,
+      "opaque_pixels": 15163,
+      "alpha_pixels": 15163,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/old_idle_02.png",
+      "group": "characters/finn/old/idle",
+      "width": 179,
+      "height": 215,
+      "bbox": [
+        12,
+        12,
+        166,
+        202
+      ],
+      "content_width": 155,
+      "content_height": 191,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 89.0,
+      "baseline_y": 202,
+      "opaque_pixels": 15534,
+      "alpha_pixels": 15534,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/old_jump.png",
+      "group": "characters/finn/old/jump",
+      "width": 193,
+      "height": 218,
+      "bbox": [
+        12,
+        12,
+        180,
+        205
+      ],
+      "content_width": 169,
+      "content_height": 194,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 96.0,
+      "baseline_y": 205,
+      "opaque_pixels": 16318,
+      "alpha_pixels": 16318,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/old_run_01.png",
+      "group": "characters/finn/old/run",
+      "width": 192,
+      "height": 201,
+      "bbox": [
+        12,
+        12,
+        179,
+        188
+      ],
+      "content_width": 168,
+      "content_height": 177,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 95.5,
+      "baseline_y": 188,
+      "opaque_pixels": 15232,
+      "alpha_pixels": 15232,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/old_run_02.png",
+      "group": "characters/finn/old/run",
+      "width": 192,
+      "height": 201,
+      "bbox": [
+        15,
+        12,
+        176,
+        188
+      ],
+      "content_width": 162,
+      "content_height": 177,
+      "margins": {
+        "left": 15,
+        "right": 15,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 95.5,
+      "baseline_y": 188,
+      "opaque_pixels": 15074,
+      "alpha_pixels": 15074,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/old_run_03.png",
+      "group": "characters/finn/old/run",
+      "width": 192,
+      "height": 201,
+      "bbox": [
+        12,
+        17,
+        179,
+        188
+      ],
+      "content_width": 168,
+      "content_height": 172,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 17,
+        "bottom": 12
+      },
+      "center_x": 95.5,
+      "baseline_y": 188,
+      "opaque_pixels": 13989,
+      "alpha_pixels": 13989,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/old_victory.png",
+      "group": "characters/finn/old/victory",
+      "width": 133,
+      "height": 211,
+      "bbox": [
+        12,
+        12,
+        120,
+        198
+      ],
+      "content_width": 109,
+      "content_height": 187,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 66.0,
+      "baseline_y": 198,
+      "opaque_pixels": 13551,
+      "alpha_pixels": 13551,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/white_fall.png",
+      "group": "characters/finn/white/fall",
+      "width": 197,
+      "height": 197,
+      "bbox": [
+        12,
+        12,
+        184,
+        184
+      ],
+      "content_width": 173,
+      "content_height": 173,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 98.0,
+      "baseline_y": 184,
+      "opaque_pixels": 11182,
+      "alpha_pixels": 11182,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/white_hurt.png",
+      "group": "characters/finn/white/hurt",
+      "width": 192,
+      "height": 219,
+      "bbox": [
+        12,
+        12,
+        179,
+        206
+      ],
+      "content_width": 168,
+      "content_height": 195,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 95.5,
+      "baseline_y": 206,
+      "opaque_pixels": 16628,
+      "alpha_pixels": 16628,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/white_idle_01.png",
+      "group": "characters/finn/white/idle",
+      "width": 187,
+      "height": 198,
+      "bbox": [
+        16,
+        14,
+        171,
+        185
+      ],
+      "content_width": 156,
+      "content_height": 172,
+      "margins": {
+        "left": 16,
+        "right": 15,
+        "top": 14,
+        "bottom": 12
+      },
+      "center_x": 93.5,
+      "baseline_y": 185,
+      "opaque_pixels": 14924,
+      "alpha_pixels": 14924,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/white_idle_02.png",
+      "group": "characters/finn/white/idle",
+      "width": 187,
+      "height": 198,
+      "bbox": [
+        12,
+        12,
+        174,
+        185
+      ],
+      "content_width": 163,
+      "content_height": 174,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 93.0,
+      "baseline_y": 185,
+      "opaque_pixels": 15471,
+      "alpha_pixels": 15471,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/white_jump.png",
+      "group": "characters/finn/white/jump",
+      "width": 192,
+      "height": 259,
+      "bbox": [
+        12,
+        12,
+        179,
+        246
+      ],
+      "content_width": 168,
+      "content_height": 235,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 95.5,
+      "baseline_y": 246,
+      "opaque_pixels": 14676,
+      "alpha_pixels": 14676,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/white_run_01.png",
+      "group": "characters/finn/white/run",
+      "width": 202,
+      "height": 236,
+      "bbox": [
+        12,
+        61,
+        189,
+        223
+      ],
+      "content_width": 178,
+      "content_height": 163,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 61,
+        "bottom": 12
+      },
+      "center_x": 100.5,
+      "baseline_y": 223,
+      "opaque_pixels": 16180,
+      "alpha_pixels": 16180,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/white_run_02.png",
+      "group": "characters/finn/white/run",
+      "width": 202,
+      "height": 236,
+      "bbox": [
+        17,
+        64,
+        184,
+        223
+      ],
+      "content_width": 168,
+      "content_height": 160,
+      "margins": {
+        "left": 17,
+        "right": 17,
+        "top": 64,
+        "bottom": 12
+      },
+      "center_x": 100.5,
+      "baseline_y": 223,
+      "opaque_pixels": 15055,
+      "alpha_pixels": 15055,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/white_run_03.png",
+      "group": "characters/finn/white/run",
+      "width": 202,
+      "height": 236,
+      "bbox": [
+        14,
+        12,
+        186,
+        223
+      ],
+      "content_width": 173,
+      "content_height": 212,
+      "margins": {
+        "left": 14,
+        "right": 15,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 100.0,
+      "baseline_y": 223,
+      "opaque_pixels": 17983,
+      "alpha_pixels": 17983,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/finn/white_victory.png",
+      "group": "characters/finn/white/victory",
+      "width": 175,
+      "height": 177,
+      "bbox": [
+        12,
+        12,
+        162,
+        164
+      ],
+      "content_width": 151,
+      "content_height": 153,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 87.0,
+      "baseline_y": 164,
+      "opaque_pixels": 6336,
+      "alpha_pixels": 6336,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/baby_fall.png",
+      "group": "characters/nora/baby/fall",
+      "width": 126,
+      "height": 194,
+      "bbox": [
+        12,
+        12,
+        113,
+        181
+      ],
+      "content_width": 102,
+      "content_height": 170,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 62.5,
+      "baseline_y": 181,
+      "opaque_pixels": 9919,
+      "alpha_pixels": 9919,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/baby_hurt.png",
+      "group": "characters/nora/baby/hurt",
+      "width": 136,
+      "height": 183,
+      "bbox": [
+        12,
+        12,
+        123,
+        170
+      ],
+      "content_width": 112,
+      "content_height": 159,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 67.5,
+      "baseline_y": 170,
+      "opaque_pixels": 11264,
+      "alpha_pixels": 11264,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/baby_idle_01.png",
+      "group": "characters/nora/baby/idle",
+      "width": 134,
+      "height": 179,
+      "bbox": [
+        12,
+        12,
+        121,
+        166
+      ],
+      "content_width": 110,
+      "content_height": 155,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 66.5,
+      "baseline_y": 166,
+      "opaque_pixels": 9962,
+      "alpha_pixels": 9962,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/baby_idle_02.png",
+      "group": "characters/nora/baby/idle",
+      "width": 134,
+      "height": 179,
+      "bbox": [
+        14,
+        12,
+        120,
+        166
+      ],
+      "content_width": 107,
+      "content_height": 155,
+      "margins": {
+        "left": 14,
+        "right": 13,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 67.0,
+      "baseline_y": 166,
+      "opaque_pixels": 9783,
+      "alpha_pixels": 9783,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/baby_jump.png",
+      "group": "characters/nora/baby/jump",
+      "width": 128,
+      "height": 164,
+      "bbox": [
+        12,
+        12,
+        115,
+        151
+      ],
+      "content_width": 104,
+      "content_height": 140,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 63.5,
+      "baseline_y": 151,
+      "opaque_pixels": 8963,
+      "alpha_pixels": 8963,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/baby_run_01.png",
+      "group": "characters/nora/baby/run",
+      "width": 140,
+      "height": 175,
+      "bbox": [
+        16,
+        14,
+        123,
+        162
+      ],
+      "content_width": 108,
+      "content_height": 149,
+      "margins": {
+        "left": 16,
+        "right": 16,
+        "top": 14,
+        "bottom": 12
+      },
+      "center_x": 69.5,
+      "baseline_y": 162,
+      "opaque_pixels": 9426,
+      "alpha_pixels": 9426,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/baby_run_02.png",
+      "group": "characters/nora/baby/run",
+      "width": 140,
+      "height": 175,
+      "bbox": [
+        12,
+        12,
+        127,
+        162
+      ],
+      "content_width": 116,
+      "content_height": 151,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 69.5,
+      "baseline_y": 162,
+      "opaque_pixels": 10785,
+      "alpha_pixels": 10785,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/baby_run_03.png",
+      "group": "characters/nora/baby/run",
+      "width": 140,
+      "height": 175,
+      "bbox": [
+        12,
+        12,
+        127,
+        162
+      ],
+      "content_width": 116,
+      "content_height": 151,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 69.5,
+      "baseline_y": 162,
+      "opaque_pixels": 10890,
+      "alpha_pixels": 10890,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/baby_victory.png",
+      "group": "characters/nora/baby/victory",
+      "width": 138,
+      "height": 188,
+      "bbox": [
+        12,
+        12,
+        125,
+        175
+      ],
+      "content_width": 114,
+      "content_height": 164,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 68.5,
+      "baseline_y": 175,
+      "opaque_pixels": 9241,
+      "alpha_pixels": 9241,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/old_fall.png",
+      "group": "characters/nora/old/fall",
+      "width": 172,
+      "height": 252,
+      "bbox": [
+        12,
+        12,
+        159,
+        239
+      ],
+      "content_width": 148,
+      "content_height": 228,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 85.5,
+      "baseline_y": 239,
+      "opaque_pixels": 12939,
+      "alpha_pixels": 12939,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/old_hurt.png",
+      "group": "characters/nora/old/hurt",
+      "width": 144,
+      "height": 183,
+      "bbox": [
+        12,
+        12,
+        131,
+        170
+      ],
+      "content_width": 120,
+      "content_height": 159,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 71.5,
+      "baseline_y": 170,
+      "opaque_pixels": 12327,
+      "alpha_pixels": 12327,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/old_idle_01.png",
+      "group": "characters/nora/old/idle",
+      "width": 160,
+      "height": 216,
+      "bbox": [
+        14,
+        15,
+        146,
+        203
+      ],
+      "content_width": 133,
+      "content_height": 189,
+      "margins": {
+        "left": 14,
+        "right": 13,
+        "top": 15,
+        "bottom": 12
+      },
+      "center_x": 80.0,
+      "baseline_y": 203,
+      "opaque_pixels": 15274,
+      "alpha_pixels": 15274,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/old_idle_02.png",
+      "group": "characters/nora/old/idle",
+      "width": 160,
+      "height": 216,
+      "bbox": [
+        12,
+        12,
+        147,
+        203
+      ],
+      "content_width": 136,
+      "content_height": 192,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 79.5,
+      "baseline_y": 203,
+      "opaque_pixels": 15497,
+      "alpha_pixels": 15497,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/old_jump.png",
+      "group": "characters/nora/old/jump",
+      "width": 194,
+      "height": 208,
+      "bbox": [
+        12,
+        12,
+        181,
+        195
+      ],
+      "content_width": 170,
+      "content_height": 184,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 96.5,
+      "baseline_y": 195,
+      "opaque_pixels": 15021,
+      "alpha_pixels": 15021,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/old_run_01.png",
+      "group": "characters/nora/old/run",
+      "width": 191,
+      "height": 225,
+      "bbox": [
+        12,
+        26,
+        178,
+        212
+      ],
+      "content_width": 167,
+      "content_height": 187,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 26,
+        "bottom": 12
+      },
+      "center_x": 95.0,
+      "baseline_y": 212,
+      "opaque_pixels": 15005,
+      "alpha_pixels": 15005,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/old_run_02.png",
+      "group": "characters/nora/old/run",
+      "width": 191,
+      "height": 225,
+      "bbox": [
+        14,
+        33,
+        175,
+        212
+      ],
+      "content_width": 162,
+      "content_height": 180,
+      "margins": {
+        "left": 14,
+        "right": 15,
+        "top": 33,
+        "bottom": 12
+      },
+      "center_x": 94.5,
+      "baseline_y": 212,
+      "opaque_pixels": 14274,
+      "alpha_pixels": 14274,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/old_run_03.png",
+      "group": "characters/nora/old/run",
+      "width": 191,
+      "height": 225,
+      "bbox": [
+        12,
+        12,
+        178,
+        212
+      ],
+      "content_width": 167,
+      "content_height": 201,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 95.0,
+      "baseline_y": 212,
+      "opaque_pixels": 15856,
+      "alpha_pixels": 15856,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/old_victory.png",
+      "group": "characters/nora/old/victory",
+      "width": 143,
+      "height": 224,
+      "bbox": [
+        12,
+        12,
+        130,
+        211
+      ],
+      "content_width": 119,
+      "content_height": 200,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 71.0,
+      "baseline_y": 211,
+      "opaque_pixels": 12849,
+      "alpha_pixels": 12849,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_cast_fireball.png",
+      "group": "characters/nora/white/cast",
+      "width": 166,
+      "height": 77,
+      "bbox": [
+        12,
+        12,
+        153,
+        64
+      ],
+      "content_width": 142,
+      "content_height": 53,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 82.5,
+      "baseline_y": 64,
+      "opaque_pixels": 3555,
+      "alpha_pixels": 3555,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_fall.png",
+      "group": "characters/nora/white/fall",
+      "width": 181,
+      "height": 214,
+      "bbox": [
+        12,
+        12,
+        168,
+        201
+      ],
+      "content_width": 157,
+      "content_height": 190,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 90.0,
+      "baseline_y": 201,
+      "opaque_pixels": 12159,
+      "alpha_pixels": 12159,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_hurt.png",
+      "group": "characters/nora/white/hurt",
+      "width": 151,
+      "height": 176,
+      "bbox": [
+        12,
+        12,
+        138,
+        163
+      ],
+      "content_width": 127,
+      "content_height": 152,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 75.0,
+      "baseline_y": 163,
+      "opaque_pixels": 10261,
+      "alpha_pixels": 10261,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_idle_01.png",
+      "group": "characters/nora/white/idle",
+      "width": 185,
+      "height": 196,
+      "bbox": [
+        14,
+        13,
+        170,
+        183
+      ],
+      "content_width": 157,
+      "content_height": 171,
+      "margins": {
+        "left": 14,
+        "right": 14,
+        "top": 13,
+        "bottom": 12
+      },
+      "center_x": 92.0,
+      "baseline_y": 183,
+      "opaque_pixels": 14783,
+      "alpha_pixels": 14783,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_idle_02.png",
+      "group": "characters/nora/white/idle",
+      "width": 185,
+      "height": 196,
+      "bbox": [
+        12,
+        12,
+        172,
+        183
+      ],
+      "content_width": 161,
+      "content_height": 172,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 92.0,
+      "baseline_y": 183,
+      "opaque_pixels": 14723,
+      "alpha_pixels": 14723,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_jump.png",
+      "group": "characters/nora/white/jump",
+      "width": 184,
+      "height": 218,
+      "bbox": [
+        12,
+        12,
+        171,
+        205
+      ],
+      "content_width": 160,
+      "content_height": 194,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 91.5,
+      "baseline_y": 205,
+      "opaque_pixels": 14869,
+      "alpha_pixels": 14869,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_run_01.png",
+      "group": "characters/nora/white/run",
+      "width": 208,
+      "height": 193,
+      "bbox": [
+        14,
+        12,
+        194,
+        180
+      ],
+      "content_width": 181,
+      "content_height": 169,
+      "margins": {
+        "left": 14,
+        "right": 13,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 104.0,
+      "baseline_y": 180,
+      "opaque_pixels": 15295,
+      "alpha_pixels": 15295,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_run_02.png",
+      "group": "characters/nora/white/run",
+      "width": 208,
+      "height": 193,
+      "bbox": [
+        12,
+        16,
+        195,
+        180
+      ],
+      "content_width": 184,
+      "content_height": 165,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 16,
+        "bottom": 12
+      },
+      "center_x": 103.5,
+      "baseline_y": 180,
+      "opaque_pixels": 14629,
+      "alpha_pixels": 14629,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_run_03.png",
+      "group": "characters/nora/white/run",
+      "width": 208,
+      "height": 193,
+      "bbox": [
+        16,
+        14,
+        192,
+        180
+      ],
+      "content_width": 177,
+      "content_height": 167,
+      "margins": {
+        "left": 16,
+        "right": 15,
+        "top": 14,
+        "bottom": 12
+      },
+      "center_x": 104.0,
+      "baseline_y": 180,
+      "opaque_pixels": 14650,
+      "alpha_pixels": 14650,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/characters/nora/white_victory.png",
+      "group": "characters/nora/white/victory",
+      "width": 161,
+      "height": 217,
+      "bbox": [
+        12,
+        12,
+        148,
+        204
+      ],
+      "content_width": 137,
+      "content_height": 193,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 80.0,
+      "baseline_y": 204,
+      "opaque_pixels": 13154,
+      "alpha_pixels": 13154,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/armored_beetle/flipped.png",
+      "group": "enemies/armored_beetle/flipped",
+      "width": 214,
+      "height": 158,
+      "bbox": [
+        12,
+        12,
+        201,
+        145
+      ],
+      "content_width": 190,
+      "content_height": 134,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 106.5,
+      "baseline_y": 145,
+      "opaque_pixels": 17733,
+      "alpha_pixels": 17733,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/armored_beetle/shell.png",
+      "group": "enemies/armored_beetle/shell",
+      "width": 197,
+      "height": 135,
+      "bbox": [
+        12,
+        12,
+        184,
+        122
+      ],
+      "content_width": 173,
+      "content_height": 111,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 98.0,
+      "baseline_y": 122,
+      "opaque_pixels": 13727,
+      "alpha_pixels": 13727,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/armored_beetle/slide.png",
+      "group": "enemies/armored_beetle/slide",
+      "width": 313,
+      "height": 126,
+      "bbox": [
+        12,
+        12,
+        300,
+        113
+      ],
+      "content_width": 289,
+      "content_height": 102,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 156.0,
+      "baseline_y": 113,
+      "opaque_pixels": 18648,
+      "alpha_pixels": 18648,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/armored_beetle/walk_01.png",
+      "group": "enemies/armored_beetle/walk",
+      "width": 226,
+      "height": 181,
+      "bbox": [
+        14,
+        12,
+        212,
+        168
+      ],
+      "content_width": 199,
+      "content_height": 157,
+      "margins": {
+        "left": 14,
+        "right": 13,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 113.0,
+      "baseline_y": 168,
+      "opaque_pixels": 22575,
+      "alpha_pixels": 22575,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/armored_beetle/walk_02.png",
+      "group": "enemies/armored_beetle/walk",
+      "width": 226,
+      "height": 181,
+      "bbox": [
+        12,
+        17,
+        213,
+        168
+      ],
+      "content_width": 202,
+      "content_height": 152,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 17,
+        "bottom": 12
+      },
+      "center_x": 112.5,
+      "baseline_y": 168,
+      "opaque_pixels": 21481,
+      "alpha_pixels": 21481,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/cursed_book/angry_idle.png",
+      "group": "enemies/cursed_book/angry_idle",
+      "width": 205,
+      "height": 265,
+      "bbox": [
+        12,
+        12,
+        192,
+        252
+      ],
+      "content_width": 181,
+      "content_height": 241,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 102.0,
+      "baseline_y": 252,
+      "opaque_pixels": 28558,
+      "alpha_pixels": 28558,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/cursed_book/fireball_hit.png",
+      "group": "enemies/cursed_book/fireball_hit",
+      "width": 300,
+      "height": 229,
+      "bbox": [
+        12,
+        12,
+        287,
+        216
+      ],
+      "content_width": 276,
+      "content_height": 205,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 149.5,
+      "baseline_y": 216,
+      "opaque_pixels": 31324,
+      "alpha_pixels": 31324,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/cursed_book/squashed.png",
+      "group": "enemies/cursed_book/squashed",
+      "width": 241,
+      "height": 125,
+      "bbox": [
+        12,
+        12,
+        228,
+        112
+      ],
+      "content_width": 217,
+      "content_height": 101,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 120.0,
+      "baseline_y": 112,
+      "opaque_pixels": 13454,
+      "alpha_pixels": 13454,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/cursed_book/walk_01.png",
+      "group": "enemies/cursed_book/walk",
+      "width": 204,
+      "height": 243,
+      "bbox": [
+        12,
+        12,
+        191,
+        230
+      ],
+      "content_width": 180,
+      "content_height": 219,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 101.5,
+      "baseline_y": 230,
+      "opaque_pixels": 26568,
+      "alpha_pixels": 26568,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/cursed_book/walk_02.png",
+      "group": "enemies/cursed_book/walk",
+      "width": 204,
+      "height": 243,
+      "bbox": [
+        14,
+        14,
+        188,
+        230
+      ],
+      "content_width": 175,
+      "content_height": 217,
+      "margins": {
+        "left": 14,
+        "right": 15,
+        "top": 14,
+        "bottom": 12
+      },
+      "center_x": 101.0,
+      "baseline_y": 230,
+      "opaque_pixels": 26186,
+      "alpha_pixels": 26186,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/cursed_scroll_rocket/launcher.png",
+      "group": "enemies/cursed_scroll_rocket/launcher",
+      "width": 181,
+      "height": 123,
+      "bbox": [
+        12,
+        12,
+        168,
+        110
+      ],
+      "content_width": 157,
+      "content_height": 99,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 90.0,
+      "baseline_y": 110,
+      "opaque_pixels": 12510,
+      "alpha_pixels": 12510,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/cursed_scroll_rocket/rocket_01.png",
+      "group": "enemies/cursed_scroll_rocket/rocket",
+      "width": 232,
+      "height": 272,
+      "bbox": [
+        23,
+        45,
+        208,
+        259
+      ],
+      "content_width": 186,
+      "content_height": 215,
+      "margins": {
+        "left": 23,
+        "right": 23,
+        "top": 45,
+        "bottom": 12
+      },
+      "center_x": 115.5,
+      "baseline_y": 259,
+      "opaque_pixels": 20677,
+      "alpha_pixels": 20677,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/cursed_scroll_rocket/rocket_02.png",
+      "group": "enemies/cursed_scroll_rocket/rocket",
+      "width": 232,
+      "height": 272,
+      "bbox": [
+        12,
+        12,
+        219,
+        259
+      ],
+      "content_width": 208,
+      "content_height": 248,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 115.5,
+      "baseline_y": 259,
+      "opaque_pixels": 25240,
+      "alpha_pixels": 25240,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/hurt.png",
+      "group": "enemies/goblin_spell_thrower/hurt",
+      "width": 221,
+      "height": 285,
+      "bbox": [
+        12,
+        12,
+        208,
+        272
+      ],
+      "content_width": 197,
+      "content_height": 261,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 110.0,
+      "baseline_y": 272,
+      "opaque_pixels": 29331,
+      "alpha_pixels": 29331,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/idle.png",
+      "group": "enemies/goblin_spell_thrower/idle",
+      "width": 239,
+      "height": 252,
+      "bbox": [
+        12,
+        12,
+        226,
+        239
+      ],
+      "content_width": 215,
+      "content_height": 228,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 119.0,
+      "baseline_y": 239,
+      "opaque_pixels": 32399,
+      "alpha_pixels": 32399,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/jump.png",
+      "group": "enemies/goblin_spell_thrower/jump",
+      "width": 274,
+      "height": 275,
+      "bbox": [
+        12,
+        12,
+        261,
+        262
+      ],
+      "content_width": 250,
+      "content_height": 251,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 136.5,
+      "baseline_y": 262,
+      "opaque_pixels": 32170,
+      "alpha_pixels": 32170,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/orb_01.png",
+      "group": "enemies/goblin_spell_thrower/orb",
+      "width": 246,
+      "height": 122,
+      "bbox": [
+        48,
+        16,
+        196,
+        109
+      ],
+      "content_width": 149,
+      "content_height": 94,
+      "margins": {
+        "left": 48,
+        "right": 49,
+        "top": 16,
+        "bottom": 12
+      },
+      "center_x": 122.0,
+      "baseline_y": 109,
+      "opaque_pixels": 8572,
+      "alpha_pixels": 8572,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/orb_02.png",
+      "group": "enemies/goblin_spell_thrower/orb",
+      "width": 246,
+      "height": 122,
+      "bbox": [
+        12,
+        12,
+        233,
+        109
+      ],
+      "content_width": 222,
+      "content_height": 98,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 122.5,
+      "baseline_y": 109,
+      "opaque_pixels": 15003,
+      "alpha_pixels": 15003,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/throw.png",
+      "group": "enemies/goblin_spell_thrower/throw",
+      "width": 308,
+      "height": 245,
+      "bbox": [
+        12,
+        12,
+        295,
+        232
+      ],
+      "content_width": 284,
+      "content_height": 221,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 153.5,
+      "baseline_y": 232,
+      "opaque_pixels": 33302,
+      "alpha_pixels": 33302,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/owl_helper/flap_01.png",
+      "group": "enemies/owl_helper/flap",
+      "width": 287,
+      "height": 200,
+      "bbox": [
+        32,
+        12,
+        254,
+        187
+      ],
+      "content_width": 223,
+      "content_height": 176,
+      "margins": {
+        "left": 32,
+        "right": 32,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 143.0,
+      "baseline_y": 187,
+      "opaque_pixels": 23857,
+      "alpha_pixels": 23857,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/owl_helper/flap_02.png",
+      "group": "enemies/owl_helper/flap",
+      "width": 287,
+      "height": 200,
+      "bbox": [
+        12,
+        26,
+        274,
+        187
+      ],
+      "content_width": 263,
+      "content_height": 162,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 26,
+        "bottom": 12
+      },
+      "center_x": 143.0,
+      "baseline_y": 187,
+      "opaque_pixels": 21390,
+      "alpha_pixels": 21390,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/owl_helper/hint_sign.png",
+      "group": "enemies/owl_helper/hint_sign",
+      "width": 250,
+      "height": 239,
+      "bbox": [
+        12,
+        12,
+        237,
+        226
+      ],
+      "content_width": 226,
+      "content_height": 215,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 124.5,
+      "baseline_y": 226,
+      "opaque_pixels": 33331,
+      "alpha_pixels": 33331,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/owl_helper/perched.png",
+      "group": "enemies/owl_helper/perched",
+      "width": 193,
+      "height": 229,
+      "bbox": [
+        12,
+        12,
+        180,
+        216
+      ],
+      "content_width": 169,
+      "content_height": 205,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 96.0,
+      "baseline_y": 216,
+      "opaque_pixels": 20758,
+      "alpha_pixels": 20758,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/owl_helper/point.png",
+      "group": "enemies/owl_helper/point",
+      "width": 247,
+      "height": 218,
+      "bbox": [
+        12,
+        12,
+        234,
+        205
+      ],
+      "content_width": 223,
+      "content_height": 194,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 123.0,
+      "baseline_y": 205,
+      "opaque_pixels": 22917,
+      "alpha_pixels": 22917,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/snapping_vine/attack.png",
+      "group": "enemies/snapping_vine/attack",
+      "width": 233,
+      "height": 317,
+      "bbox": [
+        12,
+        12,
+        220,
+        304
+      ],
+      "content_width": 209,
+      "content_height": 293,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 116.0,
+      "baseline_y": 304,
+      "opaque_pixels": 36666,
+      "alpha_pixels": 36666,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/snapping_vine/retreat.png",
+      "group": "enemies/snapping_vine/retreat",
+      "width": 225,
+      "height": 179,
+      "bbox": [
+        12,
+        12,
+        212,
+        166
+      ],
+      "content_width": 201,
+      "content_height": 155,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 112.0,
+      "baseline_y": 166,
+      "opaque_pixels": 24162,
+      "alpha_pixels": 24162,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/snapping_vine/rise_01.png",
+      "group": "enemies/snapping_vine/rise",
+      "width": 223,
+      "height": 297,
+      "bbox": [
+        12,
+        70,
+        210,
+        284
+      ],
+      "content_width": 199,
+      "content_height": 215,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 70,
+        "bottom": 12
+      },
+      "center_x": 111.0,
+      "baseline_y": 284,
+      "opaque_pixels": 27572,
+      "alpha_pixels": 27572,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/snapping_vine/rise_02.png",
+      "group": "enemies/snapping_vine/rise",
+      "width": 223,
+      "height": 297,
+      "bbox": [
+        13,
+        12,
+        209,
+        284
+      ],
+      "content_width": 197,
+      "content_height": 273,
+      "margins": {
+        "left": 13,
+        "right": 13,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 111.0,
+      "baseline_y": 284,
+      "opaque_pixels": 34032,
+      "alpha_pixels": 34032,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    },
+    {
+      "path": "assets/enemies/snapping_vine/well_empty.png",
+      "group": "enemies/snapping_vine/well_empty",
+      "width": 221,
+      "height": 175,
+      "bbox": [
+        12,
+        12,
+        208,
+        162
+      ],
+      "content_width": 197,
+      "content_height": 151,
+      "margins": {
+        "left": 12,
+        "right": 12,
+        "top": 12,
+        "bottom": 12
+      },
+      "center_x": 110.0,
+      "baseline_y": 162,
+      "opaque_pixels": 23639,
+      "alpha_pixels": 23639,
+      "edge_contacts": [],
+      "warnings": [],
+      "severity": "OK"
+    }
+  ]
+}

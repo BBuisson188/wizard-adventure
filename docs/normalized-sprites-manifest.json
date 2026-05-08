@@ -1,0 +1,2845 @@
+{
+  "output_root": "assets_normalized",
+  "padding": 12,
+  "files": [
+    {
+      "path": "assets/characters/finn/baby_fall.png",
+      "group": "characters/finn/baby/fall",
+      "source_canvas": [
+        114,
+        157
+      ],
+      "source_bounds": [
+        0,
+        0,
+        113,
+        156
+      ],
+      "output_canvas": [
+        138,
+        181
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/baby_hurt.png",
+      "group": "characters/finn/baby/hurt",
+      "source_canvas": [
+        153,
+        145
+      ],
+      "source_bounds": [
+        0,
+        0,
+        152,
+        144
+      ],
+      "output_canvas": [
+        177,
+        169
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/baby_idle_01.png",
+      "group": "characters/finn/baby/idle",
+      "source_canvas": [
+        84,
+        120
+      ],
+      "source_bounds": [
+        0,
+        0,
+        83,
+        119
+      ],
+      "output_canvas": [
+        108,
+        144
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [73, 84] x [120]"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/baby_idle_02.png",
+      "group": "characters/finn/baby/idle",
+      "source_canvas": [
+        73,
+        120
+      ],
+      "source_bounds": [
+        0,
+        0,
+        72,
+        119
+      ],
+      "output_canvas": [
+        108,
+        144
+      ],
+      "placed_at": [
+        18,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [73, 84] x [120]"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/baby_jump.png",
+      "group": "characters/finn/baby/jump",
+      "source_canvas": [
+        116,
+        151
+      ],
+      "source_bounds": [
+        0,
+        0,
+        115,
+        150
+      ],
+      "output_canvas": [
+        140,
+        175
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/baby_run_01.png",
+      "group": "characters/finn/baby/run",
+      "source_canvas": [
+        109,
+        107
+      ],
+      "source_bounds": [
+        0,
+        0,
+        108,
+        106
+      ],
+      "output_canvas": [
+        133,
+        131
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [95, 109] x [99, 105, 107]",
+        "horizontal center differs from group median by +7.0px"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/baby_run_02.png",
+      "group": "characters/finn/baby/run",
+      "source_canvas": [
+        95,
+        105
+      ],
+      "source_bounds": [
+        0,
+        0,
+        94,
+        104
+      ],
+      "output_canvas": [
+        133,
+        131
+      ],
+      "placed_at": [
+        19,
+        14
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [95, 109] x [99, 105, 107]"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/baby_run_03.png",
+      "group": "characters/finn/baby/run",
+      "source_canvas": [
+        95,
+        99
+      ],
+      "source_bounds": [
+        0,
+        0,
+        94,
+        98
+      ],
+      "output_canvas": [
+        133,
+        131
+      ],
+      "placed_at": [
+        19,
+        20
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [95, 109] x [99, 105, 107]",
+        "baseline differs from group median by -6.0px"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/baby_victory.png",
+      "group": "characters/finn/baby/victory",
+      "source_canvas": [
+        101,
+        127
+      ],
+      "source_bounds": [
+        0,
+        0,
+        100,
+        126
+      ],
+      "output_canvas": [
+        125,
+        151
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/old_fall.png",
+      "group": "characters/finn/old/fall",
+      "source_canvas": [
+        163,
+        174
+      ],
+      "source_bounds": [
+        0,
+        0,
+        162,
+        173
+      ],
+      "output_canvas": [
+        187,
+        198
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/old_hurt.png",
+      "group": "characters/finn/old/hurt",
+      "source_canvas": [
+        163,
+        196
+      ],
+      "source_bounds": [
+        0,
+        0,
+        162,
+        195
+      ],
+      "output_canvas": [
+        187,
+        220
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/old_idle_01.png",
+      "group": "characters/finn/old/idle",
+      "source_canvas": [
+        131,
+        188
+      ],
+      "source_bounds": [
+        0,
+        0,
+        130,
+        187
+      ],
+      "output_canvas": [
+        179,
+        215
+      ],
+      "placed_at": [
+        24,
+        15
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [131, 155] x [188, 191]",
+        "horizontal center differs from group median by -6.0px"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/old_idle_02.png",
+      "group": "characters/finn/old/idle",
+      "source_canvas": [
+        155,
+        191
+      ],
+      "source_bounds": [
+        0,
+        0,
+        154,
+        190
+      ],
+      "output_canvas": [
+        179,
+        215
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [131, 155] x [188, 191]",
+        "horizontal center differs from group median by +6.0px"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/old_jump.png",
+      "group": "characters/finn/old/jump",
+      "source_canvas": [
+        169,
+        194
+      ],
+      "source_bounds": [
+        0,
+        0,
+        168,
+        193
+      ],
+      "output_canvas": [
+        193,
+        218
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/old_run_01.png",
+      "group": "characters/finn/old/run",
+      "source_canvas": [
+        168,
+        177
+      ],
+      "source_bounds": [
+        0,
+        0,
+        167,
+        176
+      ],
+      "output_canvas": [
+        192,
+        201
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [162, 168] x [172, 177]"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/old_run_02.png",
+      "group": "characters/finn/old/run",
+      "source_canvas": [
+        162,
+        177
+      ],
+      "source_bounds": [
+        0,
+        0,
+        161,
+        176
+      ],
+      "output_canvas": [
+        192,
+        201
+      ],
+      "placed_at": [
+        15,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [162, 168] x [172, 177]"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/old_run_03.png",
+      "group": "characters/finn/old/run",
+      "source_canvas": [
+        168,
+        172
+      ],
+      "source_bounds": [
+        0,
+        0,
+        167,
+        171
+      ],
+      "output_canvas": [
+        192,
+        201
+      ],
+      "placed_at": [
+        12,
+        17
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [162, 168] x [172, 177]",
+        "baseline differs from group median by -5.0px"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/old_victory.png",
+      "group": "characters/finn/old/victory",
+      "source_canvas": [
+        109,
+        187
+      ],
+      "source_bounds": [
+        0,
+        0,
+        108,
+        186
+      ],
+      "output_canvas": [
+        133,
+        211
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/white_fall.png",
+      "group": "characters/finn/white/fall",
+      "source_canvas": [
+        173,
+        173
+      ],
+      "source_bounds": [
+        0,
+        0,
+        172,
+        172
+      ],
+      "output_canvas": [
+        197,
+        197
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/white_hurt.png",
+      "group": "characters/finn/white/hurt",
+      "source_canvas": [
+        168,
+        195
+      ],
+      "source_bounds": [
+        0,
+        0,
+        167,
+        194
+      ],
+      "output_canvas": [
+        192,
+        219
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/white_idle_01.png",
+      "group": "characters/finn/white/idle",
+      "source_canvas": [
+        156,
+        172
+      ],
+      "source_bounds": [
+        0,
+        0,
+        155,
+        171
+      ],
+      "output_canvas": [
+        187,
+        198
+      ],
+      "placed_at": [
+        16,
+        14
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [156, 163] x [172, 174]"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/white_idle_02.png",
+      "group": "characters/finn/white/idle",
+      "source_canvas": [
+        163,
+        174
+      ],
+      "source_bounds": [
+        0,
+        0,
+        162,
+        173
+      ],
+      "output_canvas": [
+        187,
+        198
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [156, 163] x [172, 174]"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/white_jump.png",
+      "group": "characters/finn/white/jump",
+      "source_canvas": [
+        168,
+        235
+      ],
+      "source_bounds": [
+        0,
+        0,
+        167,
+        234
+      ],
+      "output_canvas": [
+        192,
+        259
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/white_run_01.png",
+      "group": "characters/finn/white/run",
+      "source_canvas": [
+        178,
+        163
+      ],
+      "source_bounds": [
+        0,
+        0,
+        177,
+        162
+      ],
+      "output_canvas": [
+        202,
+        236
+      ],
+      "placed_at": [
+        12,
+        61
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [168, 173, 178] x [160, 163, 212]"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/white_run_02.png",
+      "group": "characters/finn/white/run",
+      "source_canvas": [
+        168,
+        160
+      ],
+      "source_bounds": [
+        0,
+        0,
+        167,
+        159
+      ],
+      "output_canvas": [
+        202,
+        236
+      ],
+      "placed_at": [
+        17,
+        64
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [168, 173, 178] x [160, 163, 212]"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/white_run_03.png",
+      "group": "characters/finn/white/run",
+      "source_canvas": [
+        173,
+        212
+      ],
+      "source_bounds": [
+        0,
+        0,
+        172,
+        211
+      ],
+      "output_canvas": [
+        202,
+        236
+      ],
+      "placed_at": [
+        14,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [168, 173, 178] x [160, 163, 212]",
+        "baseline differs from group median by +49.0px"
+      ]
+    },
+    {
+      "path": "assets/characters/finn/white_victory.png",
+      "group": "characters/finn/white/victory",
+      "source_canvas": [
+        151,
+        153
+      ],
+      "source_bounds": [
+        0,
+        0,
+        150,
+        152
+      ],
+      "output_canvas": [
+        175,
+        177
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/baby_fall.png",
+      "group": "characters/nora/baby/fall",
+      "source_canvas": [
+        106,
+        172
+      ],
+      "source_bounds": [
+        2,
+        0,
+        103,
+        169
+      ],
+      "output_canvas": [
+        126,
+        194
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "top"
+      ],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "opaque pixels touch top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/baby_hurt.png",
+      "group": "characters/nora/baby/hurt",
+      "source_canvas": [
+        116,
+        161
+      ],
+      "source_bounds": [
+        2,
+        0,
+        113,
+        158
+      ],
+      "output_canvas": [
+        136,
+        183
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "top"
+      ],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "opaque pixels touch top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/baby_idle_01.png",
+      "group": "characters/nora/baby/idle",
+      "source_canvas": [
+        114,
+        159
+      ],
+      "source_bounds": [
+        2,
+        2,
+        111,
+        156
+      ],
+      "output_canvas": [
+        134,
+        179
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [111, 114] x [159]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/baby_idle_02.png",
+      "group": "characters/nora/baby/idle",
+      "source_canvas": [
+        111,
+        159
+      ],
+      "source_bounds": [
+        2,
+        2,
+        108,
+        156
+      ],
+      "output_canvas": [
+        134,
+        179
+      ],
+      "placed_at": [
+        14,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [111, 114] x [159]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/baby_jump.png",
+      "group": "characters/nora/baby/jump",
+      "source_canvas": [
+        108,
+        144
+      ],
+      "source_bounds": [
+        2,
+        2,
+        105,
+        141
+      ],
+      "output_canvas": [
+        128,
+        164
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/baby_run_01.png",
+      "group": "characters/nora/baby/run",
+      "source_canvas": [
+        112,
+        153
+      ],
+      "source_bounds": [
+        2,
+        2,
+        109,
+        150
+      ],
+      "output_canvas": [
+        140,
+        175
+      ],
+      "placed_at": [
+        16,
+        14
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [112, 120] x [153, 155]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/baby_run_02.png",
+      "group": "characters/nora/baby/run",
+      "source_canvas": [
+        120,
+        155
+      ],
+      "source_bounds": [
+        2,
+        2,
+        117,
+        152
+      ],
+      "output_canvas": [
+        140,
+        175
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [112, 120] x [153, 155]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/baby_run_03.png",
+      "group": "characters/nora/baby/run",
+      "source_canvas": [
+        120,
+        155
+      ],
+      "source_bounds": [
+        2,
+        2,
+        117,
+        152
+      ],
+      "output_canvas": [
+        140,
+        175
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [112, 120] x [153, 155]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/baby_victory.png",
+      "group": "characters/nora/baby/victory",
+      "source_canvas": [
+        118,
+        166
+      ],
+      "source_bounds": [
+        2,
+        0,
+        115,
+        163
+      ],
+      "output_canvas": [
+        138,
+        188
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "top"
+      ],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "opaque pixels touch top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/old_fall.png",
+      "group": "characters/nora/old/fall",
+      "source_canvas": [
+        150,
+        232
+      ],
+      "source_bounds": [
+        0,
+        2,
+        147,
+        229
+      ],
+      "output_canvas": [
+        172,
+        252
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/old_hurt.png",
+      "group": "characters/nora/old/hurt",
+      "source_canvas": [
+        124,
+        161
+      ],
+      "source_bounds": [
+        2,
+        0,
+        121,
+        158
+      ],
+      "output_canvas": [
+        144,
+        183
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "top"
+      ],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "opaque pixels touch top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/old_idle_01.png",
+      "group": "characters/nora/old/idle",
+      "source_canvas": [
+        137,
+        193
+      ],
+      "source_bounds": [
+        2,
+        2,
+        134,
+        190
+      ],
+      "output_canvas": [
+        160,
+        216
+      ],
+      "placed_at": [
+        14,
+        15
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [137, 140] x [193, 196]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/old_idle_02.png",
+      "group": "characters/nora/old/idle",
+      "source_canvas": [
+        140,
+        196
+      ],
+      "source_bounds": [
+        2,
+        2,
+        137,
+        193
+      ],
+      "output_canvas": [
+        160,
+        216
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [137, 140] x [193, 196]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/old_jump.png",
+      "group": "characters/nora/old/jump",
+      "source_canvas": [
+        170,
+        188
+      ],
+      "source_bounds": [
+        0,
+        2,
+        169,
+        185
+      ],
+      "output_canvas": [
+        194,
+        208
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/old_run_01.png",
+      "group": "characters/nora/old/run",
+      "source_canvas": [
+        169,
+        191
+      ],
+      "source_bounds": [
+        2,
+        2,
+        168,
+        188
+      ],
+      "output_canvas": [
+        191,
+        225
+      ],
+      "placed_at": [
+        12,
+        26
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "right"
+      ],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "opaque pixels touch right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [164, 167, 169] x [184, 191, 203]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/old_run_02.png",
+      "group": "characters/nora/old/run",
+      "source_canvas": [
+        164,
+        184
+      ],
+      "source_bounds": [
+        0,
+        2,
+        161,
+        181
+      ],
+      "output_canvas": [
+        191,
+        225
+      ],
+      "placed_at": [
+        14,
+        33
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [164, 167, 169] x [184, 191, 203]",
+        "baseline differs from group median by -7.0px"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/old_run_03.png",
+      "group": "characters/nora/old/run",
+      "source_canvas": [
+        167,
+        203
+      ],
+      "source_bounds": [
+        0,
+        0,
+        166,
+        200
+      ],
+      "output_canvas": [
+        191,
+        225
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [164, 167, 169] x [184, 191, 203]",
+        "baseline differs from group median by +12.0px"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/old_victory.png",
+      "group": "characters/nora/old/victory",
+      "source_canvas": [
+        123,
+        204
+      ],
+      "source_bounds": [
+        2,
+        2,
+        120,
+        201
+      ],
+      "output_canvas": [
+        143,
+        224
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_cast_fireball.png",
+      "group": "characters/nora/white/cast",
+      "source_canvas": [
+        146,
+        57
+      ],
+      "source_bounds": [
+        2,
+        2,
+        143,
+        54
+      ],
+      "output_canvas": [
+        166,
+        77
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_fall.png",
+      "group": "characters/nora/white/fall",
+      "source_canvas": [
+        157,
+        192
+      ],
+      "source_bounds": [
+        0,
+        0,
+        156,
+        189
+      ],
+      "output_canvas": [
+        181,
+        214
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_hurt.png",
+      "group": "characters/nora/white/hurt",
+      "source_canvas": [
+        127,
+        154
+      ],
+      "source_bounds": [
+        0,
+        0,
+        126,
+        151
+      ],
+      "output_canvas": [
+        151,
+        176
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_idle_01.png",
+      "group": "characters/nora/white/idle",
+      "source_canvas": [
+        159,
+        175
+      ],
+      "source_bounds": [
+        2,
+        2,
+        158,
+        172
+      ],
+      "output_canvas": [
+        185,
+        196
+      ],
+      "placed_at": [
+        14,
+        13
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "right"
+      ],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "opaque pixels touch right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [159, 161] x [175, 176]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_idle_02.png",
+      "group": "characters/nora/white/idle",
+      "source_canvas": [
+        161,
+        176
+      ],
+      "source_bounds": [
+        0,
+        2,
+        160,
+        173
+      ],
+      "output_canvas": [
+        185,
+        196
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [159, 161] x [175, 176]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_jump.png",
+      "group": "characters/nora/white/jump",
+      "source_canvas": [
+        160,
+        196
+      ],
+      "source_bounds": [
+        0,
+        2,
+        159,
+        195
+      ],
+      "output_canvas": [
+        184,
+        218
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "only 2px margin on top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_run_01.png",
+      "group": "characters/nora/white/run",
+      "source_canvas": [
+        181,
+        173
+      ],
+      "source_bounds": [
+        0,
+        2,
+        180,
+        170
+      ],
+      "output_canvas": [
+        208,
+        193
+      ],
+      "placed_at": [
+        14,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [177, 181, 184] x [169, 171, 173]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_run_02.png",
+      "group": "characters/nora/white/run",
+      "source_canvas": [
+        184,
+        169
+      ],
+      "source_bounds": [
+        0,
+        2,
+        183,
+        166
+      ],
+      "output_canvas": [
+        208,
+        193
+      ],
+      "placed_at": [
+        12,
+        16
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [177, 181, 184] x [169, 171, 173]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_run_03.png",
+      "group": "characters/nora/white/run",
+      "source_canvas": [
+        177,
+        171
+      ],
+      "source_bounds": [
+        0,
+        2,
+        176,
+        168
+      ],
+      "output_canvas": [
+        208,
+        193
+      ],
+      "placed_at": [
+        16,
+        14
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [177, 181, 184] x [169, 171, 173]"
+      ]
+    },
+    {
+      "path": "assets/characters/nora/white_victory.png",
+      "group": "characters/nora/white/victory",
+      "source_canvas": [
+        137,
+        197
+      ],
+      "source_bounds": [
+        0,
+        2,
+        136,
+        194
+      ],
+      "output_canvas": [
+        161,
+        217
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/armored_beetle/flipped.png",
+      "group": "enemies/armored_beetle/flipped",
+      "source_canvas": [
+        194,
+        138
+      ],
+      "source_bounds": [
+        2,
+        2,
+        191,
+        135
+      ],
+      "output_canvas": [
+        214,
+        158
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/armored_beetle/shell.png",
+      "group": "enemies/armored_beetle/shell",
+      "source_canvas": [
+        177,
+        115
+      ],
+      "source_bounds": [
+        2,
+        2,
+        174,
+        112
+      ],
+      "output_canvas": [
+        197,
+        135
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/armored_beetle/slide.png",
+      "group": "enemies/armored_beetle/slide",
+      "source_canvas": [
+        293,
+        106
+      ],
+      "source_bounds": [
+        2,
+        2,
+        290,
+        103
+      ],
+      "output_canvas": [
+        313,
+        126
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/armored_beetle/walk_01.png",
+      "group": "enemies/armored_beetle/walk",
+      "source_canvas": [
+        203,
+        161
+      ],
+      "source_bounds": [
+        2,
+        2,
+        200,
+        158
+      ],
+      "output_canvas": [
+        226,
+        181
+      ],
+      "placed_at": [
+        14,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [203, 206] x [156, 161]"
+      ]
+    },
+    {
+      "path": "assets/enemies/armored_beetle/walk_02.png",
+      "group": "enemies/armored_beetle/walk",
+      "source_canvas": [
+        206,
+        156
+      ],
+      "source_bounds": [
+        2,
+        2,
+        203,
+        153
+      ],
+      "output_canvas": [
+        226,
+        181
+      ],
+      "placed_at": [
+        12,
+        17
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [203, 206] x [156, 161]"
+      ]
+    },
+    {
+      "path": "assets/enemies/cursed_book/angry_idle.png",
+      "group": "enemies/cursed_book/angry_idle",
+      "source_canvas": [
+        185,
+        243
+      ],
+      "source_bounds": [
+        2,
+        0,
+        182,
+        240
+      ],
+      "output_canvas": [
+        205,
+        265
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "top"
+      ],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "opaque pixels touch top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/cursed_book/fireball_hit.png",
+      "group": "enemies/cursed_book/fireball_hit",
+      "source_canvas": [
+        280,
+        209
+      ],
+      "source_bounds": [
+        2,
+        2,
+        277,
+        206
+      ],
+      "output_canvas": [
+        300,
+        229
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/cursed_book/squashed.png",
+      "group": "enemies/cursed_book/squashed",
+      "source_canvas": [
+        221,
+        105
+      ],
+      "source_bounds": [
+        2,
+        2,
+        218,
+        102
+      ],
+      "output_canvas": [
+        241,
+        125
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/cursed_book/walk_01.png",
+      "group": "enemies/cursed_book/walk",
+      "source_canvas": [
+        184,
+        223
+      ],
+      "source_bounds": [
+        2,
+        2,
+        181,
+        220
+      ],
+      "output_canvas": [
+        204,
+        243
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [179, 184] x [221, 223]"
+      ]
+    },
+    {
+      "path": "assets/enemies/cursed_book/walk_02.png",
+      "group": "enemies/cursed_book/walk",
+      "source_canvas": [
+        179,
+        221
+      ],
+      "source_bounds": [
+        2,
+        2,
+        176,
+        218
+      ],
+      "output_canvas": [
+        204,
+        243
+      ],
+      "placed_at": [
+        14,
+        14
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [179, 184] x [221, 223]"
+      ]
+    },
+    {
+      "path": "assets/enemies/cursed_scroll_rocket/launcher.png",
+      "group": "enemies/cursed_scroll_rocket/launcher",
+      "source_canvas": [
+        157,
+        99
+      ],
+      "source_bounds": [
+        0,
+        0,
+        156,
+        98
+      ],
+      "output_canvas": [
+        181,
+        123
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/cursed_scroll_rocket/rocket_01.png",
+      "group": "enemies/cursed_scroll_rocket/rocket",
+      "source_canvas": [
+        186,
+        215
+      ],
+      "source_bounds": [
+        0,
+        0,
+        185,
+        214
+      ],
+      "output_canvas": [
+        232,
+        272
+      ],
+      "placed_at": [
+        23,
+        45
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [186, 208] x [215, 248]",
+        "baseline differs from group median by -16.5px",
+        "horizontal center differs from group median by -5.5px"
+      ]
+    },
+    {
+      "path": "assets/enemies/cursed_scroll_rocket/rocket_02.png",
+      "group": "enemies/cursed_scroll_rocket/rocket",
+      "source_canvas": [
+        208,
+        248
+      ],
+      "source_bounds": [
+        0,
+        0,
+        207,
+        247
+      ],
+      "output_canvas": [
+        232,
+        272
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [186, 208] x [215, 248]",
+        "baseline differs from group median by +16.5px",
+        "horizontal center differs from group median by +5.5px"
+      ]
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/hurt.png",
+      "group": "enemies/goblin_spell_thrower/hurt",
+      "source_canvas": [
+        197,
+        261
+      ],
+      "source_bounds": [
+        0,
+        0,
+        196,
+        260
+      ],
+      "output_canvas": [
+        221,
+        285
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/idle.png",
+      "group": "enemies/goblin_spell_thrower/idle",
+      "source_canvas": [
+        215,
+        228
+      ],
+      "source_bounds": [
+        0,
+        0,
+        214,
+        227
+      ],
+      "output_canvas": [
+        239,
+        252
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/jump.png",
+      "group": "enemies/goblin_spell_thrower/jump",
+      "source_canvas": [
+        250,
+        251
+      ],
+      "source_bounds": [
+        0,
+        0,
+        249,
+        250
+      ],
+      "output_canvas": [
+        274,
+        275
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/orb_01.png",
+      "group": "enemies/goblin_spell_thrower/orb",
+      "source_canvas": [
+        149,
+        94
+      ],
+      "source_bounds": [
+        0,
+        0,
+        148,
+        93
+      ],
+      "output_canvas": [
+        246,
+        122
+      ],
+      "placed_at": [
+        48,
+        16
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [149, 222] x [94, 98]",
+        "horizontal center differs from group median by -18.2px"
+      ]
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/orb_02.png",
+      "group": "enemies/goblin_spell_thrower/orb",
+      "source_canvas": [
+        222,
+        98
+      ],
+      "source_bounds": [
+        0,
+        0,
+        221,
+        97
+      ],
+      "output_canvas": [
+        246,
+        122
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [149, 222] x [94, 98]",
+        "horizontal center differs from group median by +18.2px"
+      ]
+    },
+    {
+      "path": "assets/enemies/goblin_spell_thrower/throw.png",
+      "group": "enemies/goblin_spell_thrower/throw",
+      "source_canvas": [
+        284,
+        221
+      ],
+      "source_bounds": [
+        0,
+        0,
+        283,
+        220
+      ],
+      "output_canvas": [
+        308,
+        245
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/owl_helper/flap_01.png",
+      "group": "enemies/owl_helper/flap",
+      "source_canvas": [
+        223,
+        176
+      ],
+      "source_bounds": [
+        0,
+        0,
+        222,
+        175
+      ],
+      "output_canvas": [
+        287,
+        200
+      ],
+      "placed_at": [
+        32,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [223, 263] x [162, 176]",
+        "baseline differs from group median by +7.0px",
+        "horizontal center differs from group median by -10.0px"
+      ]
+    },
+    {
+      "path": "assets/enemies/owl_helper/flap_02.png",
+      "group": "enemies/owl_helper/flap",
+      "source_canvas": [
+        263,
+        162
+      ],
+      "source_bounds": [
+        0,
+        0,
+        262,
+        161
+      ],
+      "output_canvas": [
+        287,
+        200
+      ],
+      "placed_at": [
+        12,
+        26
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge",
+        "group canvas sizes differ: [223, 263] x [162, 176]",
+        "baseline differs from group median by -7.0px",
+        "horizontal center differs from group median by +10.0px"
+      ]
+    },
+    {
+      "path": "assets/enemies/owl_helper/hint_sign.png",
+      "group": "enemies/owl_helper/hint_sign",
+      "source_canvas": [
+        226,
+        215
+      ],
+      "source_bounds": [
+        0,
+        0,
+        225,
+        214
+      ],
+      "output_canvas": [
+        250,
+        239
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/owl_helper/perched.png",
+      "group": "enemies/owl_helper/perched",
+      "source_canvas": [
+        169,
+        205
+      ],
+      "source_bounds": [
+        0,
+        0,
+        168,
+        204
+      ],
+      "output_canvas": [
+        193,
+        229
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/owl_helper/point.png",
+      "group": "enemies/owl_helper/point",
+      "source_canvas": [
+        223,
+        194
+      ],
+      "source_bounds": [
+        0,
+        0,
+        222,
+        193
+      ],
+      "output_canvas": [
+        247,
+        218
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "warnings_before": [
+        "opaque pixels touch left edge",
+        "opaque pixels touch right edge",
+        "opaque pixels touch top edge",
+        "opaque pixels touch bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/snapping_vine/attack.png",
+      "group": "enemies/snapping_vine/attack",
+      "source_canvas": [
+        213,
+        297
+      ],
+      "source_bounds": [
+        2,
+        2,
+        210,
+        294
+      ],
+      "output_canvas": [
+        233,
+        317
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/snapping_vine/retreat.png",
+      "group": "enemies/snapping_vine/retreat",
+      "source_canvas": [
+        205,
+        159
+      ],
+      "source_bounds": [
+        2,
+        2,
+        202,
+        156
+      ],
+      "output_canvas": [
+        225,
+        179
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    },
+    {
+      "path": "assets/enemies/snapping_vine/rise_01.png",
+      "group": "enemies/snapping_vine/rise",
+      "source_canvas": [
+        203,
+        219
+      ],
+      "source_bounds": [
+        2,
+        2,
+        200,
+        216
+      ],
+      "output_canvas": [
+        223,
+        297
+      ],
+      "placed_at": [
+        12,
+        70
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [201, 203] x [219, 277]",
+        "baseline differs from group median by -29.0px"
+      ]
+    },
+    {
+      "path": "assets/enemies/snapping_vine/rise_02.png",
+      "group": "enemies/snapping_vine/rise",
+      "source_canvas": [
+        201,
+        277
+      ],
+      "source_bounds": [
+        2,
+        2,
+        198,
+        274
+      ],
+      "output_canvas": [
+        223,
+        297
+      ],
+      "placed_at": [
+        13,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge",
+        "group canvas sizes differ: [201, 203] x [219, 277]",
+        "baseline differs from group median by +29.0px"
+      ]
+    },
+    {
+      "path": "assets/enemies/snapping_vine/well_empty.png",
+      "group": "enemies/snapping_vine/well_empty",
+      "source_canvas": [
+        201,
+        155
+      ],
+      "source_bounds": [
+        2,
+        2,
+        198,
+        152
+      ],
+      "output_canvas": [
+        221,
+        175
+      ],
+      "placed_at": [
+        12,
+        12
+      ],
+      "padding": 12,
+      "edge_contacts_before": [],
+      "warnings_before": [
+        "only 2px margin on left edge",
+        "only 2px margin on right edge",
+        "only 2px margin on top edge",
+        "only 2px margin on bottom edge"
+      ]
+    }
+  ]
+}

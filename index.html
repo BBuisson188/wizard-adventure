@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Wizard Adventures - Level 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>Wizard Adventures - Moonstone Meadow</title>
   <link rel="stylesheet" href="src/styles.css" />
 </head>
 <body>
@@ -12,14 +14,13 @@
       <div class="topbar">
         <div>
           <h1>Wizard Adventures</h1>
-          <p>Level 1-1: Moonstone Meadow</p>
+          <p>Moonstone Meadow: five levels and a boss</p>
         </div>
-        <div class="controls-note">
-          <strong>Move:</strong> A/D or Arrows &nbsp; <strong>Crouch:</strong> S/Down &nbsp; <strong>Jump:</strong> Space/W/Up &nbsp; <strong>Cast:</strong> X &nbsp; <strong>Restart:</strong> R
-        </div>
+        <button id="pauseButton" class="topbar-button" type="button" disabled>Pause</button>
       </div>
       <div class="canvas-wrap">
-        <canvas id="game" width="960" height="540" aria-label="Wizard Adventures Level 1 game canvas"></canvas>
+        <canvas id="game" width="960" height="540" aria-label="Wizard Adventures Moonstone Meadow game canvas"></canvas>
+        <button id="fullscreenButton" class="fullscreen-button" type="button" aria-label="Enter full screen">Full Screen</button>
         <div id="touchControls" class="touch-controls standard on-title" aria-label="Touch controls">
           <div class="touch-dpad" aria-label="Movement buttons">
             <button class="touch-btn dpad-btn up" data-key="ArrowUp" data-touch="up" aria-label="Up">▲</button>
@@ -33,10 +34,6 @@
           </div>
         </div>
         <div id="loading" class="overlay">Loading Moonstone Meadow...</div>
-      </div>
-      <div class="notes">
-        <span>This is the real Level 1 foundation build, not a test template.</span>
-        <span>Choose Finn or Nora by clicking/tapping their portrait on the start screen. Keyboard shortcuts F and N still work.</span>
       </div>
     </section>
   </main>

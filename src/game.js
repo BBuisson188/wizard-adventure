@@ -5,10 +5,13 @@
   const canvas = document.getElementById('game');
   const ctx = canvas.getContext('2d');
   const loadingEl = document.getElementById('loading');
+  const pauseButton = document.getElementById('pauseButton');
+  const fullscreenButton = document.getElementById('fullscreenButton');
+  const canvasWrap = document.querySelector('.canvas-wrap');
   const W = DATA.display.width;
   const H = DATA.display.height;
   const TILE = DATA.display.tile;
-  const WORLD_W = DATA.display.worldWidth;
+  let worldW = DATA.display.worldWidth;
   const FLOOR_Y = DATA.display.floorY;
 
   const keys = new Set();
@@ -23,6 +26,19 @@
     finn: { x: 170, y: 232, w: 260, h: 238, label: 'Finn' },
     nora: { x: 530, y: 232, w: 260, h: 238, label: 'Nora' }
   };
+  const testBossButton = { x: 758, y: 170, w: 152, h: 38, label: 'Test Boss' };
+  const titleResumeButton = { x: 350, y: 474, w: 260, h: 42, label: 'Resume Saved Game' };
+  const pauseMenuButtons = {
+    resume: { x: 360, y: 228, w: 240, h: 48, label: 'Resume' },
+    save: { x: 360, y: 292, w: 240, h: 48, label: 'Save Game' }
+  };
+  const levels = DATA.levels || [DATA.level];
+  const SAVE_KEY = 'wizardAdventuresSave';
+  const HIGH_SCORE_KEY = 'wizardAdventuresHighScores';
+
+  function currentLevel() {
+    return levels[state.levelIndex] || levels[0];
+  }
 
   const state = {
     mode: 'loading',
@@ -33,8 +49,11 @@
     score: 0,
     coins: 0,
     lives: 3,
+    levelIndex: 0,
     levelComplete: false,
     bellScore: 0,
+    runComplete: false,
+    scoreSubmitted: false,
     message: '',
     messageTimer: 0,
     particles: [],
@@ -113,6 +132,132 @@
     return null;
   }
 
+  function pointInBox(x, y, box) {
+    return x >= box.x && x <= box.x + box.w && y >= box.y && y <= box.y + box.h;
+  }
+
+  function clonePlain(value) {
+    return JSON.parse(JSON.stringify(value));
+  }
+
+  function savedGame() {
+    try {
+      return JSON.parse(localStorage.getItem(SAVE_KEY) || 'null');
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function hasSavedGame() {
+    const save = savedGame();
+    return !!save && Array.isArray(save.levels) && save.levels.length === levels.length && save.state && save.player && save.world;
+  }
+
+  function highScores() {
+    try {
+      const scores = JSON.parse(localStorage.getItem(HIGH_SCORE_KEY) || '[]');
+      return Array.isArray(scores) ? scores : [];
+    } catch (_) {
+      return [];
+    }
+  }
+
+  function saveHighScore(name, score) {
+    const scores = highScores();
+    scores.push({ name: (name || 'Wizard').slice(0, 12), score, date: new Date().toISOString() });
+    scores.sort((a, b) => b.score - a.score);
+    localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(scores.slice(0, 8)));
+  }
+
+  function bossLevelIndex() {
+    const index = levels.findIndex(level => level.id === '1-Boss');
+    return index >= 0 ? index : levels.length - 1;
+  }
+
+  function startBossTest(character = state.selectedCharacter || 'finn') {
+    resetLevel(character, bossLevelIndex(), false);
+  }
+
+  function pauseGame() {
+    if (state.mode !== 'playing') return;
+    state.mode = 'paused';
+  }
+
+  function resumeGame() {
+    if (state.mode !== 'paused') return;
+    state.mode = 'playing';
+  }
+
+  function saveGame() {
+    const saveState = clonePlain(state);
+    saveState.mode = 'playing';
+    saveState.owlHint = { active: false, expanded: false, timer: 0, owl: null };
+    localStorage.setItem(SAVE_KEY, JSON.stringify({
+      version: 1,
+      savedAt: new Date().toISOString(),
+      levels: levels.map(level => level.id),
+      state: saveState,
+      player: clonePlain(player),
+      world: clonePlain(world)
+    }));
+    showMessage('Game saved on this browser.', 150);
+  }
+
+  function loadSavedGame() {
+    const save = savedGame();
+    if (!save || !save.state || !save.player || !save.world) return false;
+    Object.assign(state, save.state);
+    state.mode = 'playing';
+    state.owlHint = { active: false, expanded: false, timer: 0, owl: null };
+    state.message = 'Saved game loaded.';
+    state.messageTimer = 150;
+    Object.assign(player, save.player);
+    Object.assign(world, save.world);
+    DATA.level = currentLevel();
+    worldW = currentLevel().worldWidth || DATA.display.worldWidth;
+    return true;
+  }
+
+  function submitHighScoreIfNeeded() {
+    if (state.scoreSubmitted || state.score <= 0) return;
+    state.scoreSubmitted = true;
+    const name = window.prompt('New high score! Enter your name:', state.selectedCharacter === 'nora' ? 'Nora' : 'Finn');
+    saveHighScore(name, state.score);
+  }
+
+  function fullscreenElement() {
+    return document.fullscreenElement || document.webkitFullscreenElement || null;
+  }
+
+  function fullscreenSupported() {
+    return !!(canvasWrap && (canvasWrap.requestFullscreen || canvasWrap.webkitRequestFullscreen));
+  }
+
+  function updateFullscreenButton() {
+    if (!fullscreenButton) return;
+    if (!fullscreenSupported()) {
+      fullscreenButton.classList.add('hidden');
+      return;
+    }
+    const active = fullscreenElement() === canvasWrap;
+    fullscreenButton.classList.remove('hidden');
+    fullscreenButton.classList.toggle('exit-mode', active);
+    fullscreenButton.textContent = active ? 'X' : 'Full Screen';
+    fullscreenButton.setAttribute('aria-label', active ? 'Exit full screen' : 'Enter full screen');
+  }
+
+  function toggleFullscreen() {
+    if (!fullscreenSupported()) return;
+    if (fullscreenElement()) {
+      if (document.exitFullscreen) document.exitFullscreen();
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    } else if (canvasWrap.requestFullscreen) {
+      canvasWrap.requestFullscreen().catch(() => {});
+    } else if (canvasWrap.webkitRequestFullscreen) {
+      canvasWrap.webkitRequestFullscreen();
+    }
+  }
+
   function normalPlayerSize(power = player.power) {
     if (power === 'baby') return { w: 42, h: 62 };
     if (power === 'old') return { w: 48, h: 80 };
@@ -157,26 +302,34 @@
     }
   }
 
-  function resetLevel(character = state.selectedCharacter) {
+  function resetLevel(character = state.selectedCharacter, levelIndex = state.levelIndex || 0, keepRunStats = false) {
+    state.levelIndex = clamp(levelIndex, 0, levels.length - 1);
+    const level = currentLevel();
+    DATA.level = level;
+    worldW = level.worldWidth || DATA.display.worldWidth;
     state.selectedCharacter = character;
     state.mode = 'playing';
     state.frame = 0;
     state.cameraX = 0;
     state.cameraTargetX = 0;
-    state.score = 0;
-    state.coins = 0;
-    state.lives = 3;
+    if (!keepRunStats) {
+      state.score = 0;
+      state.coins = 0;
+      state.lives = 3;
+    }
     state.levelComplete = false;
     state.bellScore = 0;
-    state.message = 'Recover the stolen spell book!';
+    state.runComplete = false;
+    state.scoreSubmitted = false;
+    state.message = level.intro || `${level.id}: ${level.name}`;
     state.messageTimer = 180;
     state.particles = [];
-    state.checkpoint = { x: DATA.level.spawn.x, y: DATA.level.spawn.y, active: false };
+    state.checkpoint = { x: level.spawn.x, y: level.spawn.y, active: false };
     state.owlHint = { active: false, expanded: false, timer: 0, owl: null };
 
     Object.assign(player, {
-      x: DATA.level.spawn.x,
-      y: DATA.level.spawn.y,
+      x: level.spawn.x,
+      y: level.spawn.y,
       w: 42,
       h: 62,
       vx: 0,
@@ -195,14 +348,23 @@
       crouchLocked: false
     });
 
-    world.solids = DATA.level.solids.map(s => ({ ...s }));
-    world.blocks = DATA.level.blocks.map(b => ({ ...b, w: 58, h: 58, spent: false, broken: false, bump: 0 }));
-    world.coins = DATA.level.coins.map(([x, y], i) => ({ id: i, x, y, w: 30, h: 30, collected: false, bob: Math.random() * 100 }));
+    world.solids = level.solids.map(s => ({ ...s }));
+    world.blocks = level.blocks.map(b => ({ ...b, w: 62, h: 58, spent: false, broken: false, bump: 0 }));
+    world.coins = level.coins.map(([x, y], i) => ({ id: i, x, y, w: 30, h: 30, collected: false, bob: Math.random() * 100 }));
     world.items = [];
     world.projectiles = [];
-    world.props = DATA.level.props.map(p => ({ ...p, activated: false }));
-    world.goal = { ...DATA.level.goal, w: 130, h: 250, ringing: 0 };
-    world.enemies = DATA.level.enemies.map((e, i) => makeEnemy(e, i));
+    world.props = level.props.map(p => ({ ...p, activated: false }));
+    world.goal = { ...level.goal, w: 130, h: 250, ringing: 0, locked: !!level.goalLocked };
+    world.enemies = level.enemies.map((e, i) => makeEnemy(e, i));
+  }
+
+  function advanceLevel() {
+    if (state.levelIndex >= levels.length - 1) {
+      state.runComplete = true;
+      state.mode = 'complete';
+      return;
+    }
+    resetLevel(state.selectedCharacter, state.levelIndex + 1, true);
   }
 
   function makeEnemy(e, i) {
@@ -212,6 +374,7 @@
     if (e.type === 'snappingVine') return { ...base, w: 70, h: 130, vx: 0, cycle: rand(0, 180) };
     if (e.type === 'goblin') return { ...base, w: 62, h: 74, vx: 0, throwTimer: 90 };
     if (e.type === 'scrollLauncher') return { ...base, w: 64, h: 45, vx: 0, shootTimer: 120 };
+    if (e.type === 'grimoireBoss') return { ...base, w: 154, h: 126, vx: 0, hp: 6, maxHp: 6, baseX: e.x, baseY: e.y, throwTimer: 140, phaseTimer: 0, hurtFlash: 0 };
     return base;
   }
 
@@ -291,9 +454,25 @@
     if (state.mode === 'title') {
       if (consumePressed('KeyF') || consumePressed('Space') || consumePressed('Enter')) resetLevel('finn');
       if (consumePressed('KeyN') || consumePressed('KeyX')) resetLevel('nora');
+      if (consumePressed('KeyB')) startBossTest();
+      if (consumePressed('KeyC')) loadSavedGame();
       return;
     }
-    if (consumePressed('KeyR')) resetLevel(state.selectedCharacter);
+    if (state.mode === 'complete') {
+      if (!state.runComplete && (consumePressed('Space') || consumePressed('Enter'))) advanceLevel();
+      if (consumePressed('KeyR')) resetLevel(state.selectedCharacter, state.levelIndex, true);
+      return;
+    }
+    if (state.mode === 'paused') {
+      if (consumePressed('Escape') || consumePressed('KeyP') || consumePressed('Enter')) resumeGame();
+      if (consumePressed('KeyS')) saveGame();
+      return;
+    }
+    if (consumePressed('Escape') || consumePressed('KeyP')) {
+      pauseGame();
+      return;
+    }
+    if (consumePressed('KeyR')) resetLevel(state.selectedCharacter, state.levelIndex, false);
     if (state.mode !== 'playing') return;
 
     const left = keys.has('ArrowLeft') || keys.has('KeyA');
@@ -441,8 +620,8 @@
     setCrouch(keys.has('ArrowDown') || keys.has('KeyS'));
 
     if (player.y > H + 220) hurtPlayer(true);
-    player.x = clamp(player.x, 0, WORLD_W - player.w);
-    state.cameraTargetX = clamp(player.x + player.w / 2 - W * .42, 0, WORLD_W - W);
+    player.x = clamp(player.x, 0, worldW - player.w);
+    state.cameraTargetX = clamp(player.x + player.w / 2 - W * .42, 0, Math.max(0, worldW - W));
     state.cameraX += (state.cameraTargetX - state.cameraX) * 0.12;
   }
 
@@ -496,12 +675,30 @@
   }
 
   function spawnItem(type, x, y) {
-    world.items.push({ type, x, y, w: 40, h: 40, vx: type === 'potion1Up' ? 1.1 : .8, vy: -1.2, rise: 28, collected: false });
+    world.items.push({
+      type,
+      x,
+      y,
+      w: 40,
+      h: 40,
+      vx: type === 'potion1Up' ? 1.1 : .8,
+      vy: -1.2,
+      rise: 28,
+      life: 720,
+      collected: false
+    });
   }
 
   function updateItems() {
     for (const item of world.items) {
       if (item.collected) continue;
+      if (item.rise <= 0) {
+        item.life--;
+        if (item.life <= 0) {
+          item.collected = true;
+          continue;
+        }
+      }
       if (item.rise > 0) { item.y -= 1.2; item.rise--; }
       else {
         item.vy += .45;
@@ -591,6 +788,33 @@
           world.projectiles.push({ type: 'scrollRocket', x: e.x - 10, y: e.y - 25, w: 60, h: 34, vx: e.dir * 5.2, vy: 0, life: 260 });
           e.shootTimer = 180;
         }
+      } else if (e.type === 'grimoireBoss') {
+        e.phaseTimer++;
+        if (e.hurtFlash > 0) e.hurtFlash--;
+        e.x = e.baseX + Math.sin(e.phaseTimer * 0.018) * 150;
+        e.y = e.baseY - 32 + Math.sin(e.phaseTimer * 0.035) * 58;
+        e.dir = player.x + player.w / 2 < e.x + e.w / 2 ? -1 : 1;
+        e.throwTimer--;
+        if (e.throwTimer <= 0) {
+          const burst = e.hp <= 3 ? 3 : 2;
+          for (let i = 0; i < burst; i++) {
+            const targetX = player.x + player.w / 2;
+            const dx = targetX - (e.x + e.w / 2);
+            const speed = clamp(dx / 90, -4.4, 4.4);
+            world.projectiles.push({
+              type: 'bossMoon',
+              x: e.x + e.w / 2 - 15,
+              y: e.y + 46 + i * 18,
+              w: 40,
+              h: 36,
+              vx: speed,
+              vy: -5.2 + i * 1.9,
+              life: 315,
+              bounce: 0
+            });
+          }
+          e.throwTimer = e.hp <= 3 ? 190 : 250;
+        }
       } else {
         if (e.type === 'armoredBeetle' && e.state === 'shell') e.vx = 0;
         if (e.type === 'armoredBeetle' && e.state === 'slide') e.vx = e.dir * 6.2;
@@ -613,7 +837,14 @@
 
   function enemyHitbox(e) {
     if (e.type === 'snappingVine') return { x: e.x + 12, y: e.y + 6, w: 46, h: e.h - 12 };
+    if (e.type === 'armoredBeetle') return { x: e.x, y: e.y - 12, w: e.w, h: e.h + 12 };
+    if (e.type === 'grimoireBoss') return { x: e.x - 2, y: e.y - 28, w: e.w + 4, h: e.h + 38 };
     return e;
+  }
+
+  function bossStompZone(e) {
+    const hitbox = enemyHitbox(e);
+    return { x: hitbox.x + 8, y: hitbox.y, w: hitbox.w - 16, h: 74 };
   }
 
   function handlePlayerEnemyCollision(e) {
@@ -622,10 +853,43 @@
       defeatEnemy(e, 'star');
       return;
     }
+    if (e.type === 'armoredBeetle' && e.state === 'shell') {
+      const hitbox = enemyHitbox(e);
+      const pBottom = player.y + player.h;
+      if (player.vy > 1 && pBottom - hitbox.y < 34) {
+        stompEnemy(e);
+        player.vy = -9.6;
+        player.onGround = false;
+      } else {
+        e.state = 'slide';
+        e.dir = player.x + player.w / 2 < e.x + e.w / 2 ? 1 : -1;
+        e.vx = e.dir * 6.2;
+        player.vx = -e.dir * 3.4;
+      }
+      playTone('stomp');
+      return;
+    }
+
+    if (e.type === 'grimoireBoss') {
+      const zone = bossStompZone(e);
+      const pBottom = player.y + player.h;
+      const playerCenter = player.x + player.w / 2;
+      if (player.vy >= 0 && playerCenter >= zone.x && playerCenter <= zone.x + zone.w && pBottom >= zone.y && pBottom <= zone.y + zone.h) {
+        damageBoss(e, 'stomp');
+        player.vy = -12.5;
+        player.onGround = false;
+        playTone('stomp');
+      } else {
+        hurtPlayer(false);
+      }
+      return;
+    }
+
     const stompable = e.type === 'cursedBook' || e.type === 'armoredBeetle' || e.type === 'goblin';
     const pBottom = player.y + player.h;
     const eTop = enemyHitbox(e).y;
-    if (stompable && player.vy > 1 && pBottom - eTop < 28) {
+    const stompWindow = e.type === 'armoredBeetle' ? 36 : 28;
+    if (stompable && player.vy > 1 && pBottom - eTop < stompWindow) {
       stompEnemy(e);
       player.vy = -9.6;
       player.onGround = false;
@@ -640,10 +904,13 @@
       if (e.state === 'walk') {
         e.state = 'shell';
         e.vx = 0;
+        e.h = 30;
+        e.y += 6;
         addScore(200, e.x, e.y);
       } else if (e.state === 'shell') {
         e.state = 'slide';
         e.dir = player.x < e.x ? 1 : -1;
+        e.vx = e.dir * 6.2;
         addScore(400, e.x, e.y);
       } else if (e.state === 'slide') {
         e.state = 'shell';
@@ -655,6 +922,10 @@
   }
 
   function defeatEnemy(e, reason) {
+    if (e.type === 'grimoireBoss') {
+      damageBoss(e, reason);
+      return;
+    }
     e.alive = false;
     e.stomped = true;
     e.vx = 0;
@@ -663,10 +934,33 @@
     for (let i = 0; i < 6; i++) state.particles.push({ type: 'spark', x: e.x + e.w/2, y: e.y + e.h/2, vx: rand(-3, 3), vy: rand(-4, 1), life: 35 });
   }
 
+  function damageBoss(e, reason) {
+    if (!e.alive || e.hurtFlash > 0) return;
+    e.hp--;
+    e.hurtFlash = 28;
+    e.throwTimer = Math.min(e.throwTimer, 55);
+    addScore(reason === 'fireball' ? 300 : 500, e.x + e.w / 2, e.y + 20);
+    for (let i = 0; i < 12; i++) {
+      state.particles.push({ type: 'spark', x: e.x + e.w / 2, y: e.y + e.h / 2, vx: rand(-4, 4), vy: rand(-5, 2), life: 42 });
+    }
+    playTone('hurt');
+    if (e.hp <= 0) {
+      e.alive = false;
+      e.stomped = true;
+      e.vx = 0;
+      e.vy = 0;
+      if (world.goal) world.goal.locked = false;
+      addScore(5000, e.x + e.w / 2, e.y);
+      showMessage('Grimoire Guardian defeated! Ring the bell!', 260);
+      playTone('bell');
+    }
+  }
+
   function updateProjectiles() {
     for (const p of world.projectiles) {
       p.life--;
       if (p.type === 'enemyOrb') p.vy += .18;
+      if (p.type === 'bossMoon') p.vy += .22;
       if (p.type === 'playerFireball') p.vy += .45;
       p.x += p.vx;
       p.y += p.vy;
@@ -680,6 +974,16 @@
             p.bounce++;
           } else {
             p.life = 0;
+          }
+        } else if (p.type === 'bossMoon') {
+          if (p.vy > 0 && p.y + p.h - s.y < 28) {
+            p.y = s.y - p.h;
+            p.vy = -7.2;
+            p.vx *= 0.84;
+            p.bounce++;
+          } else {
+            p.vx *= -0.76;
+            p.x += p.vx;
           }
         } else {
           p.life = 0;
@@ -700,7 +1004,10 @@
         p.life = 0;
       }
     }
-    world.projectiles = world.projectiles.filter(p => p.life > 0 && p.x > state.cameraX - 400 && p.x < state.cameraX + W + 400 && p.y < H + 220);
+    world.projectiles = world.projectiles.filter(p => {
+      const margin = p.type === 'bossMoon' ? 800 : 400;
+      return p.life > 0 && p.x > state.cameraX - margin && p.x < state.cameraX + W + margin && p.y < H + 260;
+    });
   }
 
   function updateCheckpoints() {
@@ -709,7 +1016,7 @@
       const playerCenter = player.x + player.w / 2;
       if (playerCenter >= p.x + 24) {
         p.activated = true;
-        state.checkpoint = { x: p.x + 56, y: DATA.level.spawn.y, active: true };
+        state.checkpoint = { x: p.x + 56, y: currentLevel().spawn.y, active: true };
         showMessage('Checkpoint reached!', 160);
         addScore(500, p.x + 30, p.y);
         playTone('power');
@@ -731,7 +1038,10 @@
     player.respawnTimer = 70;
     player.hurtTimer = 70;
     showMessage(state.lives > 0 ? 'Careful! Try again.' : 'Game over. Press R to restart.', 200);
-    if (state.lives <= 0) state.mode = 'gameover';
+    if (state.lives <= 0) {
+      state.mode = 'gameover';
+      submitHighScoreIfNeeded();
+    }
   }
 
   function respawnPlayer() {
@@ -749,18 +1059,23 @@
 
   function goalLayout() {
     const g = world.goal;
-    const towerW = 166;
-    const towerH = 156;
-    const towerX = g.x - 38;
-    const towerY = g.y;
-    const ropeX = g.x + 48;
-    const ropeTop = towerY + 138;
+    const towerW = 188;
+    const towerH = 270;
+    const towerX = g.x - 72;
+    const towerY = g.y - 46;
+    const ropeX = g.x + 18;
+    const ropeTop = towerY + 184;
     const ropeBottom = FLOOR_Y + 28;
-    return { towerX, towerY, towerW, towerH, ropeX, ropeTop, ropeBottom, ropeW: 30 };
+    return { towerX, towerY, towerW, towerH, ropeX, ropeTop, ropeBottom, ropeW: 22 };
   }
 
   function updateGoal() {
     if (!world.goal || state.levelComplete) return;
+    if (world.goal.locked && world.enemies.some(e => e.type === 'grimoireBoss' && e.alive)) {
+      const nearGoal = Math.abs((player.x + player.w / 2) - world.goal.x) < 320;
+      if (nearGoal && state.messageTimer <= 0) showMessage('The bell is sealed until the Grimoire Guardian falls.', 120);
+      return;
+    }
     const layout = goalLayout();
     const rope = {
       x: layout.ropeX - layout.ropeW / 2,
@@ -779,7 +1094,9 @@
       player.victoryTimer = 150;
       player.vx = 0;
       player.vy = 0;
-      showMessage(`Bell rung! Height bonus: ${points}`, 260);
+      const lastLevel = state.levelIndex >= levels.length - 1;
+      if (lastLevel) state.runComplete = true;
+      showMessage(lastLevel ? `Moonstone Meadow complete! Height bonus: ${points}` : `Bell rung! Height bonus: ${points}`, 260);
       playTone('bell');
     }
   }
@@ -929,8 +1246,11 @@
   function drawBlock(b) {
     if (b.broken) return;
     const y = b.y - Math.sin((12 - b.bump) / 12 * Math.PI) * (b.bump > 0 ? 9 : 0);
-    if (b.type === 'crescent') drawImageWorld(b.spent ? DATA.assets.tiles.crescentSpent : DATA.assets.tiles.crescentGlowing, b.x, y, b.w, b.h);
-    else drawImageWorld(DATA.assets.tiles.oldBrick, b.x, y, b.w, b.h);
+    const drawPad = 0;
+    const drawH = 58;
+    const drawW = 62;
+    if (b.type === 'crescent') drawImageWorld(b.spent ? DATA.assets.tiles.crescentSpent : DATA.assets.tiles.crescentGlowing, b.x - drawPad, y - drawPad, drawW + drawPad * 2, drawH + drawPad * 2);
+    else drawImageWorld(DATA.assets.tiles.oldBrick, b.x - drawPad, y - drawPad, drawW + drawPad * 2, drawH + drawPad * 2);
   }
 
   function drawGoal() {
@@ -940,98 +1260,35 @@
     const sx = Math.round(layout.towerX - state.cameraX);
     if (sx + layout.towerW < -220 || sx > W + 220) return;
 
-    // Use the image asset as a decoration if it is available, then reinforce it with a clear procedural tower.
-    drawImageWorld(DATA.assets.tiles.floatingBellTower, layout.towerX - 12, layout.towerY - 20, 190, 215);
+    drawImageWorld(DATA.assets.tiles.bellTower, layout.towerX, layout.towerY, layout.towerW, layout.towerH);
 
-    ctx.save();
-    ctx.translate(sx, layout.towerY);
-
-    // Floating stone base.
-    ctx.fillStyle = 'rgba(55, 62, 85, .95)';
-    ctx.beginPath();
-    ctx.moveTo(28, 132);
-    ctx.lineTo(138, 132);
-    ctx.lineTo(116, 158);
-    ctx.lineTo(50, 158);
-    ctx.closePath();
-    ctx.fill();
-    ctx.strokeStyle = 'rgba(20, 28, 54, .9)';
-    ctx.lineWidth = 4;
-    ctx.stroke();
-
-    // Stone tower body.
-    ctx.fillStyle = '#d6d1bd';
-    ctx.strokeStyle = '#596079';
-    ctx.lineWidth = 4;
-    ctx.fillRect(44, 54, 78, 82);
-    ctx.strokeRect(44, 54, 78, 82);
-
-    // Blue roof.
-    ctx.fillStyle = '#3d79c9';
-    ctx.beginPath();
-    ctx.moveTo(28, 58);
-    ctx.lineTo(84, 10);
-    ctx.lineTo(140, 58);
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-
-    // Bell opening and bell.
-    ctx.fillStyle = '#1e2b5b';
-    ctx.beginPath();
-    ctx.roundRect(62, 72, 44, 45, 12);
-    ctx.fill();
-    ctx.fillStyle = '#ffd66e';
-    ctx.beginPath();
-    ctx.moveTo(71, 98);
-    ctx.quadraticCurveTo(84, 75, 97, 98);
-    ctx.lineTo(101, 111);
-    ctx.lineTo(67, 111);
-    ctx.closePath();
-    ctx.fill();
-    ctx.strokeStyle = '#8b5b1f';
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    // Small crescent flag.
-    ctx.fillStyle = '#ffd66e';
-    ctx.fillRect(83, 0, 4, 18);
-    ctx.fillStyle = '#2d5fae';
-    ctx.beginPath();
-    ctx.moveTo(87, 1);
-    ctx.lineTo(127, 10);
-    ctx.lineTo(87, 19);
-    ctx.closePath();
-    ctx.fill();
-    ctx.restore();
-
-    // Rope: long, readable, and connected from bell tower down to the ground.
+    const ropeImage = img(DATA.assets.tiles.bellRope);
     const rx = Math.round(layout.ropeX - state.cameraX);
-    ctx.save();
-    ctx.strokeStyle = '#6b431f';
-    ctx.lineWidth = 8;
-    ctx.lineCap = 'round';
-    ctx.beginPath();
-    ctx.moveTo(rx, layout.ropeTop);
-    for (let y = layout.ropeTop; y <= layout.ropeBottom; y += 22) {
-      ctx.lineTo(rx + Math.sin(y * .08) * 3, y);
+    if (ropeImage) {
+      ctx.save();
+      const ropeW = layout.ropeW;
+      const segmentH = 170;
+      for (let y = layout.ropeTop; y < layout.ropeBottom; y += segmentH - 18) {
+        const h = Math.min(segmentH, layout.ropeBottom - y + 14);
+        ctx.drawImage(ropeImage, rx - ropeW / 2, y, ropeW, h);
+      }
+      ctx.restore();
+    } else {
+      ctx.save();
+      ctx.strokeStyle = '#6b431f';
+      ctx.lineWidth = 8;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(rx, layout.ropeTop);
+      ctx.lineTo(rx, layout.ropeBottom);
+      ctx.stroke();
+      ctx.restore();
     }
-    ctx.stroke();
-    ctx.strokeStyle = '#c99a55';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(rx - 3, layout.ropeTop + 3);
-    ctx.lineTo(rx - 3, layout.ropeBottom - 3);
-    ctx.stroke();
-    ctx.fillStyle = '#6b431f';
-    ctx.beginPath();
-    ctx.ellipse(rx, layout.ropeBottom + 3, 12, 8, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
 
     if (g.ringing > 0) {
       g.ringing--;
-      drawImageWorld(DATA.assets.tiles.bellRing, layout.towerX + 8, layout.towerY + 40, 150, 150, false, Math.min(1, g.ringing / 60));
+      const alpha = Math.min(1, g.ringing / 45);
+      drawImageWorld(DATA.assets.tiles.bellRing, layout.towerX + 34, layout.towerY + 96, 124, 118, false, alpha);
     }
   }
 
@@ -1047,6 +1304,10 @@
       if (item.type === 'sparkWand') path = DATA.assets.items.sparkWand;
       if (item.type === 'starCharm') path = DATA.assets.items.starCharm;
       if (item.type === 'potion1Up') path = DATA.assets.items.potion1Up;
+      if (item.life < 180) {
+        const interval = item.life < 60 ? 4 : item.life < 120 ? 8 : 14;
+        if (Math.floor(item.life / interval) % 2 === 0) continue;
+      }
       drawImageWorld(path, item.x, item.y, 46, 46);
     }
   }
@@ -1056,6 +1317,11 @@
       if (!e.alive) {
         if (e.type === 'cursedBook') drawImageWorld(DATA.assets.enemies.cursedBook.squashed, e.x, e.y + 18, 52, 25);
         if (e.type === 'armoredBeetle') drawImageWorld(DATA.assets.enemies.armoredBeetle.flipped, e.x, e.y, 62, 44);
+        if (e.type === 'grimoireBoss') {
+          const bossArt = DATA.assets.enemies.grimoireGuardian;
+          const path = bossArt ? bossArt.defeated : DATA.assets.enemies.cursedBook.squashed;
+          drawImageWorld(path, e.x - 38, e.y - 12, 235, 150, e.dir > 0, .85);
+        }
         continue;
       }
       if (e.type === 'cursedBook') {
@@ -1083,7 +1349,52 @@
       if (e.type === 'scrollLauncher') {
         drawImageWorld(DATA.assets.enemies.scrollRocket.launcher, e.x, e.y, 70, 42);
       }
+      if (e.type === 'grimoireBoss') {
+        const bossArt = DATA.assets.enemies.grimoireGuardian;
+        let path = bossArt ? bossArt.idleOpen : DATA.assets.enemies.cursedBook.walk[Math.floor(e.timer / 12) % DATA.assets.enemies.cursedBook.walk.length];
+        if (bossArt) {
+          if (e.hurtFlash > 0) path = bossArt.hit;
+          else if (e.throwTimer < 32) path = e.hp <= 3 ? bossArt.summonPages : bossArt.castMoon;
+          else if (e.hp <= 2 && Math.floor(e.timer / 24) % 2 === 0) path = bossArt.roar;
+          else if (Math.floor(e.timer / 36) % 2 === 0) path = bossArt.idleClosed;
+        }
+        const alpha = e.hurtFlash > 0 && Math.floor(e.hurtFlash / 4) % 2 === 0 ? .55 : 1;
+        ctx.save();
+        const sx = e.x - state.cameraX + e.w / 2;
+        const sy = e.y + e.h / 2;
+        const glow = ctx.createRadialGradient(sx, sy, 20, sx, sy, 140);
+        glow.addColorStop(0, 'rgba(157, 113, 255, .35)');
+        glow.addColorStop(1, 'rgba(45, 18, 105, 0)');
+        ctx.fillStyle = glow;
+        ctx.fillRect(sx - 150, sy - 150, 300, 300);
+        ctx.restore();
+        drawImageWorld(path, e.x - 38, e.y - 48, 235, 215, e.dir > 0, alpha);
+        drawBossHealth(e);
+      }
     }
+  }
+
+  function drawBossHealth(e) {
+    const barW = 280;
+    const barH = 14;
+    const x = W / 2 - barW / 2;
+    const y = 60;
+    const fill = clamp(e.hp / e.maxHp, 0, 1);
+    ctx.save();
+    ctx.fillStyle = 'rgba(17, 15, 42, .78)';
+    ctx.fillRect(x - 10, y - 26, barW + 20, 48);
+    ctx.strokeStyle = '#f4d86a';
+    ctx.lineWidth = 3;
+    ctx.strokeRect(x - 10, y - 26, barW + 20, 48);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 15px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('GRIMOIRE GUARDIAN', W / 2, y - 7);
+    ctx.fillStyle = '#28184f';
+    ctx.fillRect(x, y, barW, barH);
+    ctx.fillStyle = fill > .34 ? '#9e7cff' : '#ff706d';
+    ctx.fillRect(x, y, barW * fill, barH);
+    ctx.restore();
   }
 
   function drawProjectiles() {
@@ -1095,6 +1406,11 @@
       if (p.type === 'enemyOrb') {
         const frames = DATA.assets.enemies.goblin.orb;
         drawImageWorld(frames[Math.floor(state.frame / 8) % frames.length], p.x, p.y, 34, 30, p.vx < 0);
+      }
+      if (p.type === 'bossMoon') {
+        const bossArt = DATA.assets.enemies.grimoireGuardian;
+        const path = bossArt ? (p.bounce % 2 === 0 ? bossArt.moonProjectile : bossArt.crescentProjectile) : DATA.assets.enemies.goblin.orb[Math.floor(state.frame / 6) % DATA.assets.enemies.goblin.orb.length];
+        drawImageWorld(path, p.x - 10, p.y - 10, 58, 54, p.vx < 0);
       }
       if (p.type === 'scrollRocket') {
         const frames = DATA.assets.enemies.scrollRocket.frames;
@@ -1240,8 +1556,9 @@
     ctx.fillText(`SCORE ${String(state.score).padStart(6, '0')}`, 24, 30);
     ctx.fillText(`COINS ${String(state.coins).padStart(2, '0')}`, 220, 30);
     ctx.fillText(`LIVES ${state.lives}`, 350, 30);
-    ctx.fillText(`${state.selectedCharacter.toUpperCase()} · ${player.power.toUpperCase()} WIZARD`, 460, 30);
-    ctx.fillText('1-1', 890, 30);
+    ctx.fillText(`${state.selectedCharacter.toUpperCase()} - ${player.power.toUpperCase()} WIZARD`, 460, 30);
+    ctx.textAlign = 'right';
+    ctx.fillText(currentLevel().id, W - 24, 30);
     if (state.messageTimer > 0) {
       ctx.font = 'bold 20px Arial';
       ctx.fillStyle = '#fff1a8';
@@ -1285,6 +1602,22 @@
     ctx.restore();
   }
 
+  function drawMenuButton(box, fill = 'rgba(255, 211, 106, .18)', stroke = '#ffd66e') {
+    ctx.save();
+    ctx.fillStyle = fill;
+    ctx.strokeStyle = stroke;
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.roundRect(box.x, box.y, box.w, box.h, 12);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = '#fff6c9';
+    ctx.font = 'bold 18px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText(box.label, box.x + box.w / 2, box.y + 29);
+    ctx.restore();
+  }
+
   function drawTitle() {
     drawBackground();
     ctx.save();
@@ -1302,17 +1635,58 @@
     ctx.fillText('Choose Your Wizard', W / 2, 174);
     ctx.font = '18px Arial';
     ctx.fillStyle = '#dce6ff';
-    ctx.fillText('Click or tap a character to begin Moonstone Meadow 1-1', W / 2, 205);
+    ctx.fillText('Click or tap a character to begin Moonstone Meadow', W / 2, 205);
     ctx.restore();
 
     drawTitleChoice('finn', titleChoices.finn);
     drawTitleChoice('nora', titleChoices.nora);
+    if (hasSavedGame()) drawMenuButton(titleResumeButton, 'rgba(126, 200, 255, .20)', '#7ec8ff');
+    drawMenuButton(testBossButton);
 
     ctx.save();
     ctx.textAlign = 'center';
-    ctx.font = '16px Arial';
+    ctx.font = '14px Arial';
     ctx.fillStyle = '#fff1a8';
-    ctx.fillText('Keyboard shortcuts still work: F = Finn, N = Nora', W / 2, 505);
+    ctx.fillText(hasSavedGame() ? 'F = Finn, N = Nora, C = Continue, B = Test Boss' : 'F = Finn, N = Nora, B = Test Boss', W / 2, 532);
+    ctx.restore();
+  }
+
+  function drawPauseOverlay() {
+    ctx.save();
+    ctx.fillStyle = 'rgba(7, 10, 24, .62)';
+    ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = 'rgba(18, 25, 58, .94)';
+    ctx.strokeStyle = 'rgba(255,255,255,.24)';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.roundRect(310, 160, 340, 225, 18);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = '#ffd66e';
+    ctx.font = 'bold 36px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('Paused', W / 2, 205);
+    drawMenuButton(pauseMenuButtons.resume, 'rgba(126, 200, 255, .20)', '#7ec8ff');
+    drawMenuButton(pauseMenuButtons.save);
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#cbd5e1';
+    ctx.fillText('Saved games stay on this browser.', W / 2, 366);
+    ctx.restore();
+  }
+
+  function drawHighScores() {
+    const scores = highScores();
+    if (!scores.length) return;
+    ctx.save();
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#ffd66e';
+    ctx.font = 'bold 20px Arial';
+    ctx.fillText('High Scores', W / 2, 362);
+    ctx.font = '16px Arial';
+    ctx.fillStyle = '#ffffff';
+    scores.slice(0, 5).forEach((entry, i) => {
+      ctx.fillText(`${i + 1}. ${entry.name}  ${entry.score}`, W / 2, 388 + i * 22);
+    });
     ctx.restore();
   }
 
@@ -1329,7 +1703,8 @@
     ctx.fillText(subtitle, W/2, 260);
     ctx.fillStyle = '#dce6ff';
     ctx.font = '20px Arial';
-    ctx.fillText('Press R to restart Level 1', W/2, 318);
+    const action = state.mode === 'complete' && !state.runComplete ? 'Press Space or Enter for the next level. Press R to replay this one.' : 'Press R to restart';
+    ctx.fillText(action, W/2, 318);
     ctx.restore();
   }
 
@@ -1345,13 +1720,23 @@
     drawOwlHint();
     drawParticles();
     drawHud();
-    if (state.mode === 'complete') drawEndOverlay('Level Complete!', `Bell bonus: ${state.bellScore} · Score: ${state.score}`);
-    if (state.mode === 'gameover') drawEndOverlay('Game Over', `Score: ${state.score}`);
+    if (state.mode === 'paused') drawPauseOverlay();
+    if (state.mode === 'complete') {
+      drawEndOverlay(state.runComplete ? 'Moonstone Meadow Complete!' : `${currentLevel().id} Complete!`, `Bell bonus: ${state.bellScore} - Score: ${state.score}`);
+    }
+    if (state.mode === 'gameover') {
+      drawEndOverlay('Game Over', `Score: ${state.score}`);
+      drawHighScores();
+    }
   }
 
   function syncTouchControls() {
     if (!touchControls) return;
-    touchControls.classList.toggle('on-title', state.mode === 'title');
+    touchControls.classList.toggle('on-title', state.mode !== 'playing');
+    if (pauseButton) {
+      pauseButton.disabled = !(state.mode === 'playing' || state.mode === 'paused');
+      pauseButton.textContent = state.mode === 'paused' ? 'Resume' : 'Pause';
+    }
     if (touchButtonB) {
       const bDisabled = state.mode !== 'title' && !(state.mode === 'playing' && player.power === 'white' && player.respawnTimer <= 0 && player.victoryTimer <= 0);
       touchButtonB.classList.toggle('disabled', bDisabled);
@@ -1406,10 +1791,33 @@
   canvas.addEventListener('pointerdown', (e) => {
     const p = canvasPoint(e);
     if (state.mode === 'title') {
+      if (hasSavedGame() && pointInBox(p.x, p.y, titleResumeButton)) {
+        e.preventDefault();
+        if (loadSavedGame()) playTone('power');
+        return;
+      }
+      if (pointInBox(p.x, p.y, testBossButton)) {
+        e.preventDefault();
+        startBossTest();
+        playTone('power');
+        return;
+      }
       const choice = titleChoiceAt(p.x, p.y);
       if (choice) {
         e.preventDefault();
         resetLevel(choice);
+        playTone('power');
+      }
+      return;
+    }
+    if (state.mode === 'paused') {
+      if (pointInBox(p.x, p.y, pauseMenuButtons.resume)) {
+        e.preventDefault();
+        resumeGame();
+        playTone('coin');
+      } else if (pointInBox(p.x, p.y, pauseMenuButtons.save)) {
+        e.preventDefault();
+        saveGame();
         playTone('power');
       }
       return;
@@ -1425,6 +1833,31 @@
     }
   });
 
+  if (pauseButton) {
+    pauseButton.addEventListener('click', () => {
+      if (state.mode === 'playing') pauseGame();
+      else if (state.mode === 'paused') resumeGame();
+    });
+  }
+
+  if (fullscreenButton) {
+    fullscreenButton.addEventListener('pointerdown', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleFullscreen();
+    });
+  }
+
+  canvas.addEventListener('dblclick', e => e.preventDefault());
+  canvasWrap.addEventListener('dblclick', e => e.preventDefault());
+  canvasWrap.addEventListener('touchend', e => e.preventDefault(), { passive: false });
+  ['gesturestart', 'gesturechange', 'gestureend'].forEach(type => {
+    window.addEventListener(type, e => e.preventDefault(), { passive: false });
+  });
+
+  document.addEventListener('fullscreenchange', updateFullscreenButton);
+  document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
+
   window.addEventListener('blur', () => {
     keys.clear();
     pressed.clear();
@@ -1433,13 +1866,14 @@
   });
 
   window.addEventListener('keydown', (e) => {
-    const usable = ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space','Enter','KeyA','KeyD','KeyS','KeyW','KeyX','KeyR','KeyF','KeyN','ShiftLeft','ShiftRight'];
+    const usable = ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space','Enter','Escape','KeyA','KeyB','KeyC','KeyD','KeyF','KeyN','KeyP','KeyR','KeyS','KeyW','KeyX','ShiftLeft','ShiftRight'];
     if (usable.includes(e.code)) e.preventDefault();
     pressCode(e.code);
   });
   window.addEventListener('keyup', e => releaseCode(e.code));
 
   bindTouchControls();
+  updateFullscreenButton();
 
   loadImages().then(() => {
     loadingEl.classList.add('hidden');

@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+assets_backup/
+assets_candidates/
+assets_normalized/
