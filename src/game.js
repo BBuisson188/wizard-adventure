@@ -36,6 +36,10 @@
     next: { x: 360, y: 292, w: 240, h: 48, label: 'Next Level' },
     replay: { x: 360, y: 356, w: 240, h: 42, label: 'Replay Level' }
   };
+  const endGameButtons = {
+    restart: { x: 360, y: 304, w: 240, h: 48, label: 'Restart' }
+  };
+  const hudPauseButton = { x: 765, y: 9, w: 82, h: 30, label: 'Pause' };
   const levels = DATA.levels || [DATA.level];
   const SAVE_KEY = 'wizardAdventuresSave';
   const HIGH_SCORE_KEY = 'wizardAdventuresHighScores';
@@ -180,6 +184,15 @@
 
   function startBossTest(character = state.selectedCharacter || 'finn') {
     resetLevel(character, bossLevelIndex(), false);
+  }
+
+  function returnToTitle() {
+    state.mode = 'title';
+    state.cameraX = 0;
+    state.cameraTargetX = 0;
+    state.message = '';
+    state.messageTimer = 0;
+    state.owlHint = { active: false, expanded: false, timer: 0, owl: null };
   }
 
   function pauseGame() {
@@ -464,7 +477,14 @@
     }
     if (state.mode === 'complete') {
       if (!state.runComplete && (consumePressed('Space') || consumePressed('Enter'))) advanceLevel();
-      if (consumePressed('KeyR')) resetLevel(state.selectedCharacter, state.levelIndex, true);
+      if (consumePressed('KeyR')) {
+        if (state.runComplete) returnToTitle();
+        else resetLevel(state.selectedCharacter, state.levelIndex, true);
+      }
+      return;
+    }
+    if (state.mode === 'gameover') {
+      if (consumePressed('KeyR') || consumePressed('Enter') || consumePressed('Space')) returnToTitle();
       return;
     }
     if (state.mode === 'paused') {
@@ -1044,7 +1064,7 @@
     state.lives--;
     player.respawnTimer = 70;
     player.hurtTimer = 70;
-    showMessage(state.lives > 0 ? 'Careful! Try again.' : 'Game over. Press R to restart.', 200);
+    showMessage(state.lives > 0 ? 'Careful! Try again.' : 'Game over.', 200);
     if (state.lives <= 0) {
       state.mode = 'gameover';
       submitHighScoreIfNeeded();
@@ -1564,6 +1584,18 @@
     ctx.fillText(`COINS ${String(state.coins).padStart(2, '0')}`, 220, 30);
     ctx.fillText(`LIVES ${state.lives}`, 350, 30);
     ctx.fillText(`${state.selectedCharacter.toUpperCase()} - ${player.power.toUpperCase()} WIZARD`, 460, 30);
+    ctx.fillStyle = state.mode === 'paused' ? 'rgba(126,200,255,.32)' : 'rgba(255,214,110,.18)';
+    ctx.strokeStyle = state.mode === 'paused' ? '#7ec8ff' : '#ffd66e';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.roundRect(hudPauseButton.x, hudPauseButton.y, hudPauseButton.w, hudPauseButton.h, 8);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = '#fff6c9';
+    ctx.font = 'bold 15px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText(state.mode === 'paused' ? 'Resume' : 'Pause', hudPauseButton.x + hudPauseButton.w / 2, 29);
+    ctx.fillStyle = '#fff';
     ctx.textAlign = 'right';
     ctx.fillText(currentLevel().id, W - 24, 30);
     if (state.messageTimer > 0) {
@@ -1728,8 +1760,11 @@
     ctx.fillText(subtitle, W/2, 260);
     ctx.fillStyle = '#dce6ff';
     ctx.font = '20px Arial';
-    const action = state.mode === 'complete' && !state.runComplete ? 'Tap Next Level to continue.' : 'Press R to restart';
-    ctx.fillText(action, W/2, 318);
+    if (state.mode === 'complete' && !state.runComplete) {
+      ctx.fillText('Tap Next Level to continue.', W/2, 318);
+    } else {
+      drawMenuButton(endGameButtons.restart, 'rgba(126, 200, 255, .20)', '#7ec8ff');
+    }
     ctx.restore();
   }
 
@@ -1838,6 +1873,12 @@
       return;
     }
     if (state.mode === 'paused') {
+      if (pointInBox(p.x, p.y, hudPauseButton)) {
+        e.preventDefault();
+        resumeGame();
+        playTone('coin');
+        return;
+      }
       if (pointInBox(p.x, p.y, pauseMenuButtons.resume)) {
         e.preventDefault();
         resumeGame();
@@ -1861,7 +1902,21 @@
       }
       return;
     }
+    if ((state.mode === 'complete' && state.runComplete) || state.mode === 'gameover') {
+      if (pointInBox(p.x, p.y, endGameButtons.restart)) {
+        e.preventDefault();
+        returnToTitle();
+        playTone('coin');
+      }
+      return;
+    }
     if (state.mode === 'playing') {
+      if (pointInBox(p.x, p.y, hudPauseButton)) {
+        e.preventDefault();
+        pauseGame();
+        playTone('coin');
+        return;
+      }
       const owl = owlPropAtWorldPoint(p.x + state.cameraX, p.y);
       if (owl) {
         e.preventDefault();
