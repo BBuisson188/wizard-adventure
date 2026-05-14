@@ -43,6 +43,7 @@
   const levels = DATA.levels || [DATA.level];
   const SAVE_KEY = 'wizardAdventuresSave';
   const HIGH_SCORE_KEY = 'wizardAdventuresHighScores';
+  const CACHED_GLOBAL_SCORE_KEY = 'wizardAdventuresCachedGlobalScores';
   const PENDING_GLOBAL_SCORE_KEY = 'wizardAdventuresPendingGlobalScores';
   const LEADERBOARD_LIMIT = 10;
   const GAME_ID = 'wizard-adventure';
@@ -57,7 +58,7 @@
   let leaderboardCollection = null;
   let firestoreApi = null;
   const globalLeaderboard = {
-    scores: [],
+    scores: cachedGlobalScores(),
     status: 'loading',
     message: 'Loading...'
   };
@@ -230,6 +231,7 @@
   }
 
   function scoreIsEligible(score) {
+    if (score <= 0) return false;
     if (qualifiesForScoreList(score, highScores())) return true;
     if (globalLeaderboard.status !== 'ready') return true;
     return qualifiesForScoreList(score, globalLeaderboard.scores);
@@ -242,6 +244,23 @@
       localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(sortScores(scores).slice(0, LEADERBOARD_LIMIT)));
     } catch (error) {
       console.warn('Local high score save failed:', error);
+    }
+  }
+
+  function cachedGlobalScores() {
+    try {
+      const scores = JSON.parse(localStorage.getItem(CACHED_GLOBAL_SCORE_KEY) || '[]');
+      return Array.isArray(scores) ? sortScores(scores).slice(0, LEADERBOARD_LIMIT) : [];
+    } catch (_) {
+      return [];
+    }
+  }
+
+  function saveCachedGlobalScores(scores) {
+    try {
+      localStorage.setItem(CACHED_GLOBAL_SCORE_KEY, JSON.stringify(sortScores(scores).slice(0, LEADERBOARD_LIMIT)));
+    } catch (error) {
+      console.warn('Cached global score save failed:', error);
     }
   }
 
@@ -272,6 +291,22 @@
       queuedAt: new Date().toISOString()
     });
     savePendingGlobalScores(pending);
+  }
+
+  function pendingScoresForDisplay() {
+    return pendingGlobalScores().map(entry => ({
+      playerName: cleanPlayerName(entry.playerName || entry.name),
+      name: cleanPlayerName(entry.playerName || entry.name),
+      score: Math.floor(Number(entry.score) || 0),
+      gameId: GAME_ID,
+      createdAt: timestampMillis(entry.queuedAt),
+      pending: true
+    }));
+  }
+
+  function displayedLeaderboardScores() {
+    const baseScores = globalLeaderboard.scores.length ? globalLeaderboard.scores : cachedGlobalScores();
+    return sortScores([...baseScores, ...pendingScoresForDisplay()]).slice(0, LEADERBOARD_LIMIT);
   }
 
   function timestampMillis(value) {
@@ -321,11 +356,13 @@
     globalLeaderboard.message = 'Loading...';
     try {
       globalLeaderboard.scores = await fetchGlobalScores();
+      saveCachedGlobalScores(globalLeaderboard.scores);
       globalLeaderboard.status = 'ready';
       globalLeaderboard.message = '';
     } catch (error) {
       globalLeaderboard.status = 'unavailable';
-      globalLeaderboard.message = 'Global scores unavailable';
+      globalLeaderboard.scores = cachedGlobalScores();
+      globalLeaderboard.message = globalLeaderboard.scores.length ? 'Showing cached global scores' : 'Global scores unavailable';
       console.warn('Global score refresh failed:', error);
     }
   }
@@ -351,7 +388,7 @@
             createdAt: serverTimestamp()
           });
           currentGlobalScores.push({ playerName, name: playerName, score, gameId: GAME_ID, createdAt: Date.now() });
-          sortScores(currentGlobalScores);
+          currentGlobalScores.splice(0, currentGlobalScores.length, ...sortScores(currentGlobalScores).slice(0, LEADERBOARD_LIMIT));
         } catch (error) {
           console.warn('Global score upload failed:', error);
           remaining.push(entry);
@@ -1903,31 +1940,31 @@
   }
 
   function drawHighScores() {
-    const localScores = highScores();
-    const globalScores = globalLeaderboard.scores;
-    if (!localScores.length && !globalScores.length && globalLeaderboard.status !== 'loading') return;
-
-    function drawScoreColumn(title, scores, x, statusMessage = '') {
-      ctx.fillStyle = '#ffd66e';
-      ctx.font = 'bold 20px Arial';
-      ctx.fillText(title, x, 356);
-      ctx.font = '15px Arial';
-      ctx.fillStyle = '#ffffff';
-      if (scores.length) {
-        scores.slice(0, LEADERBOARD_LIMIT).forEach((entry, i) => {
-          const name = entry.playerName || entry.name || 'Wizard';
-          ctx.fillText(`${i + 1}. ${name}  ${entry.score}`, x, 382 + i * 15);
-        });
-      } else {
-        ctx.fillStyle = '#dce6ff';
-        ctx.fillText(statusMessage || 'No scores yet', x, 382);
-      }
-    }
+    const scores = displayedLeaderboardScores();
+    if (!scores.length && globalLeaderboard.status !== 'loading') return;
 
     ctx.save();
     ctx.textAlign = 'center';
-    drawScoreColumn('Local Top 10', localScores, 285);
-    drawScoreColumn('Global Top 10', globalScores, 675, globalLeaderboard.message);
+    ctx.fillStyle = '#ffd66e';
+    ctx.font = 'bold 20px Arial';
+    ctx.fillText('Global Top 10', W / 2, 356);
+    ctx.font = '15px Arial';
+    if (scores.length) {
+      scores.forEach((entry, i) => {
+        const name = entry.playerName || entry.name || 'Wizard';
+        const pending = entry.pending ? ' *' : '';
+        ctx.fillStyle = entry.pending ? '#fff1a8' : '#ffffff';
+        ctx.fillText(`${i + 1}. ${name}  ${entry.score}${pending}`, W / 2, 382 + i * 15);
+      });
+      if (pendingGlobalScores().length) {
+        ctx.fillStyle = '#dce6ff';
+        ctx.font = '13px Arial';
+        ctx.fillText('* pending sync', W / 2, 536);
+      }
+    } else {
+      ctx.fillStyle = '#dce6ff';
+      ctx.fillText(globalLeaderboard.message || 'No scores yet', W / 2, 382);
+    }
     ctx.restore();
   }
 

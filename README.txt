@@ -42,7 +42,7 @@ It includes:
 - owl helper prop
 - floating bell tower rope goal
 - Web Audio generated sound effects
-- local and Firestore-backed global leaderboards
+- Firestore-backed global leaderboard with local offline fallback state
 
 Main files:
 - index.html
@@ -70,10 +70,12 @@ Touch controls:
 - The CSS already includes a future flipped layout option.
 
 Leaderboards:
-- Local scores are stored in localStorage under wizardAdventuresHighScores and keep the top 10.
+- The game shows one leaderboard: the global top 10.
+- Local scores are still stored in localStorage under wizardAdventuresHighScores as fallback plumbing, but they are not shown as a separate leaderboard.
+- The latest fetched global top 10 is cached in localStorage under wizardAdventuresCachedGlobalScores so offline play can still show the best known global board.
 - Global scores are read from and written to Firestore at leaderboards/wizard-adventure/scores.
 - Global score documents contain only playerName, score, gameId, and createdAt.
 - The browser does not use Firebase Authentication and only reads global scores or creates new score documents.
 - Named scores are saved locally first, then queued in localStorage under wizardAdventuresPendingGlobalScores for global sync.
-- If Firebase is unavailable or the player is offline, local scores still work and pending global scores sync later.
+- If Firebase is unavailable or the player is offline, the visible board is the cached/projected global board with pending named scores included.
 - Pending global scores are uploaded only if they still qualify for the global top 10 at sync time; otherwise they are removed from the pending queue without deleting Firestore documents.
