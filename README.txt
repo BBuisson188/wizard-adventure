@@ -1,6 +1,11 @@
 Wizard Adventures - Level 1 Foundation Build
 
-Open index.html in a browser to play Moonstone Meadow 1-1.
+Serve this folder with a local or static web server, then open index.html to play Moonstone Meadow 1-1.
+Because the game uses ES module imports for Firebase, opening index.html directly as file:// is not supported.
+
+One local option:
+- python -m http.server 8000
+- open http://localhost:8000/
 
 Controls:
 - F: choose Finn on the title screen
@@ -37,6 +42,7 @@ It includes:
 - owl helper prop
 - floating bell tower rope goal
 - Web Audio generated sound effects
+- local and Firestore-backed global leaderboards
 
 Main files:
 - index.html
@@ -62,3 +68,12 @@ Touch controls:
 - B stays visible but dimmed when the player cannot cast.
 - On the title screen, A starts Finn and B starts Nora.
 - The CSS already includes a future flipped layout option.
+
+Leaderboards:
+- Local scores are stored in localStorage under wizardAdventuresHighScores and keep the top 10.
+- Global scores are read from and written to Firestore at leaderboards/wizard-adventure/scores.
+- Global score documents contain only playerName, score, gameId, and createdAt.
+- The browser does not use Firebase Authentication and only reads global scores or creates new score documents.
+- Named scores are saved locally first, then queued in localStorage under wizardAdventuresPendingGlobalScores for global sync.
+- If Firebase is unavailable or the player is offline, local scores still work and pending global scores sync later.
+- Pending global scores are uploaded only if they still qualify for the global top 10 at sync time; otherwise they are removed from the pending queue without deleting Firestore documents.

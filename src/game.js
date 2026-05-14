@@ -43,6 +43,44 @@
   const levels = DATA.levels || [DATA.level];
   const SAVE_KEY = 'wizardAdventuresSave';
   const HIGH_SCORE_KEY = 'wizardAdventuresHighScores';
+  const PENDING_GLOBAL_SCORE_KEY = 'wizardAdventuresPendingGlobalScores';
+  const LEADERBOARD_LIMIT = 10;
+  const GAME_ID = 'wizard-adventure';
+  const firebaseConfig = {
+    apiKey: 'AIzaSyASExWcY08MBQApypJPwPLsmHQtlyAwb5Q',
+    authDomain: 'beau-games.firebaseapp.com',
+    projectId: 'beau-games',
+    storageBucket: 'beau-games.firebasestorage.app',
+    messagingSenderId: '683259848665',
+    appId: '1:683259848665:web:33ab5572b30af9634d5bc8'
+  };
+  let leaderboardCollection = null;
+  let firestoreApi = null;
+  const globalLeaderboard = {
+    scores: [],
+    status: 'loading',
+    message: 'Loading...'
+  };
+
+  const firebaseReadyPromise = initFirebaseLeaderboard();
+
+  async function initFirebaseLeaderboard() {
+    try {
+      const [{ initializeApp }, firestore] = await Promise.all([
+        import('firebase/app'),
+        import('firebase/firestore')
+      ]);
+      const { getFirestore, collection, addDoc, getDocs, query, orderBy, limit, serverTimestamp } = firestore;
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      leaderboardCollection = collection(db, 'leaderboards', 'wizard-adventure', 'scores');
+      firestoreApi = { addDoc, getDocs, query, orderBy, limit, serverTimestamp };
+    } catch (error) {
+      globalLeaderboard.status = 'unavailable';
+      globalLeaderboard.message = 'Global scores unavailable';
+      console.warn('Firebase initialization failed:', error);
+    }
+  }
 
   function currentLevel() {
     return levels[state.levelIndex] || levels[0];
@@ -164,17 +202,166 @@
   function highScores() {
     try {
       const scores = JSON.parse(localStorage.getItem(HIGH_SCORE_KEY) || '[]');
-      return Array.isArray(scores) ? scores : [];
+      return Array.isArray(scores) ? sortScores(scores).slice(0, LEADERBOARD_LIMIT) : [];
     } catch (_) {
       return [];
     }
   }
 
+  function sortScores(scores) {
+    return scores
+      .filter(entry => entry && Number.isFinite(Number(entry.score)))
+      .sort((a, b) => {
+        const scoreDiff = Number(b.score) - Number(a.score);
+        if (scoreDiff) return scoreDiff;
+        return String(a.createdAt || a.date || '').localeCompare(String(b.createdAt || b.date || ''));
+      });
+  }
+
+  function cleanPlayerName(name) {
+    return (name || 'Wizard').trim().slice(0, 12) || 'Wizard';
+  }
+
+  function qualifiesForScoreList(score, scores) {
+    const cleanScores = sortScores(scores);
+    if (score <= 0) return false;
+    if (cleanScores.length < LEADERBOARD_LIMIT) return true;
+    return score > Number(cleanScores[LEADERBOARD_LIMIT - 1].score || 0);
+  }
+
+  function scoreIsEligible(score) {
+    if (qualifiesForScoreList(score, highScores())) return true;
+    if (globalLeaderboard.status !== 'ready') return true;
+    return qualifiesForScoreList(score, globalLeaderboard.scores);
+  }
+
   function saveHighScore(name, score) {
     const scores = highScores();
-    scores.push({ name: (name || 'Wizard').slice(0, 12), score, date: new Date().toISOString() });
-    scores.sort((a, b) => b.score - a.score);
-    localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(scores.slice(0, 8)));
+    scores.push({ name: cleanPlayerName(name), score: Math.floor(score), date: new Date().toISOString() });
+    try {
+      localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(sortScores(scores).slice(0, LEADERBOARD_LIMIT)));
+    } catch (error) {
+      console.warn('Local high score save failed:', error);
+    }
+  }
+
+  function pendingGlobalScores() {
+    try {
+      const pending = JSON.parse(localStorage.getItem(PENDING_GLOBAL_SCORE_KEY) || '[]');
+      return Array.isArray(pending) ? pending : [];
+    } catch (_) {
+      return [];
+    }
+  }
+
+  function savePendingGlobalScores(pending) {
+    try {
+      localStorage.setItem(PENDING_GLOBAL_SCORE_KEY, JSON.stringify(pending));
+    } catch (error) {
+      console.warn('Pending global score queue save failed:', error);
+    }
+  }
+
+  function queueGlobalScore(name, score) {
+    const pending = pendingGlobalScores();
+    pending.push({
+      id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+      playerName: cleanPlayerName(name),
+      score: Math.floor(score),
+      gameId: GAME_ID,
+      queuedAt: new Date().toISOString()
+    });
+    savePendingGlobalScores(pending);
+  }
+
+  function timestampMillis(value) {
+    if (!value) return 0;
+    if (typeof value.toMillis === 'function') return value.toMillis();
+    if (typeof value.seconds === 'number') return value.seconds * 1000;
+    const parsed = Date.parse(value);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  function firestoreScoreFromDoc(doc) {
+    const data = doc.data();
+    return {
+      playerName: typeof data.playerName === 'string' ? data.playerName.slice(0, 12) : 'Wizard',
+      name: typeof data.playerName === 'string' ? data.playerName.slice(0, 12) : 'Wizard',
+      score: Number.isFinite(Number(data.score)) ? Math.floor(Number(data.score)) : 0,
+      gameId: data.gameId,
+      createdAt: timestampMillis(data.createdAt)
+    };
+  }
+
+  async function fetchGlobalScores() {
+    await firebaseReadyPromise;
+    if (!leaderboardCollection || !firestoreApi) return [];
+    const { getDocs, query, orderBy, limit } = firestoreApi;
+    try {
+      const rankedQuery = query(
+        leaderboardCollection,
+        orderBy('score', 'desc'),
+        orderBy('createdAt', 'asc'),
+        limit(LEADERBOARD_LIMIT)
+      );
+      const snapshot = await getDocs(rankedQuery);
+      return sortScores(snapshot.docs.map(firestoreScoreFromDoc)).slice(0, LEADERBOARD_LIMIT);
+    } catch (error) {
+      console.warn('Global score query with createdAt tie-breaker failed:', error);
+      const fallbackQuery = query(leaderboardCollection, orderBy('score', 'desc'), limit(LEADERBOARD_LIMIT));
+      const snapshot = await getDocs(fallbackQuery);
+      return sortScores(snapshot.docs.map(firestoreScoreFromDoc)).slice(0, LEADERBOARD_LIMIT);
+    }
+  }
+
+  async function refreshGlobalScores() {
+    await firebaseReadyPromise;
+    if (!leaderboardCollection) return;
+    globalLeaderboard.status = 'loading';
+    globalLeaderboard.message = 'Loading...';
+    try {
+      globalLeaderboard.scores = await fetchGlobalScores();
+      globalLeaderboard.status = 'ready';
+      globalLeaderboard.message = '';
+    } catch (error) {
+      globalLeaderboard.status = 'unavailable';
+      globalLeaderboard.message = 'Global scores unavailable';
+      console.warn('Global score refresh failed:', error);
+    }
+  }
+
+  async function syncPendingGlobalScores() {
+    await firebaseReadyPromise;
+    if (!leaderboardCollection || !firestoreApi) return;
+    const { addDoc, serverTimestamp } = firestoreApi;
+    let pending = pendingGlobalScores();
+    if (!pending.length) return;
+    try {
+      const currentGlobalScores = await fetchGlobalScores();
+      const remaining = [];
+      for (const entry of pending) {
+        const score = Math.floor(Number(entry.score));
+        const playerName = cleanPlayerName(entry.playerName || entry.name);
+        if (!qualifiesForScoreList(score, currentGlobalScores)) continue;
+        try {
+          await addDoc(leaderboardCollection, {
+            playerName,
+            score,
+            gameId: GAME_ID,
+            createdAt: serverTimestamp()
+          });
+          currentGlobalScores.push({ playerName, name: playerName, score, gameId: GAME_ID, createdAt: Date.now() });
+          sortScores(currentGlobalScores);
+        } catch (error) {
+          console.warn('Global score upload failed:', error);
+          remaining.push(entry);
+        }
+      }
+      savePendingGlobalScores(remaining);
+      await refreshGlobalScores();
+    } catch (error) {
+      console.warn('Pending global score sync failed:', error);
+    }
   }
 
   function bossLevelIndex() {
@@ -236,10 +423,12 @@
   }
 
   function submitHighScoreIfNeeded() {
-    if (state.scoreSubmitted || state.score <= 0) return;
+    if (state.scoreSubmitted || !scoreIsEligible(state.score)) return;
     state.scoreSubmitted = true;
     const name = window.prompt('New high score! Enter your name:', state.selectedCharacter === 'nora' ? 'Nora' : 'Finn');
     saveHighScore(name, state.score);
+    queueGlobalScore(name, state.score);
+    syncPendingGlobalScores();
   }
 
   function fullscreenElement() {
@@ -1714,18 +1903,31 @@
   }
 
   function drawHighScores() {
-    const scores = highScores();
-    if (!scores.length) return;
+    const localScores = highScores();
+    const globalScores = globalLeaderboard.scores;
+    if (!localScores.length && !globalScores.length && globalLeaderboard.status !== 'loading') return;
+
+    function drawScoreColumn(title, scores, x, statusMessage = '') {
+      ctx.fillStyle = '#ffd66e';
+      ctx.font = 'bold 20px Arial';
+      ctx.fillText(title, x, 356);
+      ctx.font = '15px Arial';
+      ctx.fillStyle = '#ffffff';
+      if (scores.length) {
+        scores.slice(0, LEADERBOARD_LIMIT).forEach((entry, i) => {
+          const name = entry.playerName || entry.name || 'Wizard';
+          ctx.fillText(`${i + 1}. ${name}  ${entry.score}`, x, 382 + i * 15);
+        });
+      } else {
+        ctx.fillStyle = '#dce6ff';
+        ctx.fillText(statusMessage || 'No scores yet', x, 382);
+      }
+    }
+
     ctx.save();
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#ffd66e';
-    ctx.font = 'bold 20px Arial';
-    ctx.fillText('High Scores', W / 2, 362);
-    ctx.font = '16px Arial';
-    ctx.fillStyle = '#ffffff';
-    scores.slice(0, 5).forEach((entry, i) => {
-      ctx.fillText(`${i + 1}. ${entry.name}  ${entry.score}`, W / 2, 388 + i * 22);
-    });
+    drawScoreColumn('Local Top 10', localScores, 285);
+    drawScoreColumn('Global Top 10', globalScores, 675, globalLeaderboard.message);
     ctx.restore();
   }
 
@@ -1958,6 +2160,10 @@
     virtualPointers.clear();
     document.querySelectorAll('.touch-btn.pressed').forEach(btn => btn.classList.remove('pressed'));
   });
+  window.addEventListener('online', () => {
+    refreshGlobalScores();
+    syncPendingGlobalScores();
+  });
 
   window.addEventListener('keydown', (e) => {
     const usable = ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space','Enter','Escape','KeyA','KeyB','KeyC','KeyD','KeyF','KeyN','KeyP','KeyR','KeyS','KeyW','KeyX','ShiftLeft','ShiftRight'];
@@ -1968,6 +2174,7 @@
 
   bindTouchControls();
   updateFullscreenButton();
+  refreshGlobalScores().then(() => syncPendingGlobalScores());
 
   loadImages().then(() => {
     loadingEl.classList.add('hidden');

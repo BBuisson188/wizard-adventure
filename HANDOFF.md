@@ -1083,8 +1083,16 @@ Pause/save/high-score notes:
 - The pause overlay has Resume and Save Game buttons.
 - Saves are local to the current browser through `localStorage` using the key `wizardAdventuresSave`.
 - The title screen shows Resume Saved Game when a valid local save exists.
-- Game over prompts for a local high-score name and stores the scoreboard in `localStorage` under `wizardAdventuresHighScores`.
-- This is intentionally browser-local for now; future publishing may need export/import or account/cloud saves.
+- Game over and full World 1 completion prompt for a high-score name when the score can qualify locally, globally, or when global status is unknown.
+- Local scores are stored in `localStorage` under `wizardAdventuresHighScores` and trimmed to the top 10.
+- Global scores use the Firebase project `beau-games` and the Firestore collection path `leaderboards/wizard-adventure/scores`.
+- Browser Firestore access does not use Firebase Authentication. It only reads global score documents and creates new score documents with `addDoc`.
+- Each global score document must contain exactly `playerName`, `score`, `gameId: "wizard-adventure"`, and `createdAt` as a server timestamp.
+- The browser must not update or delete Firestore leaderboard documents, and it must not write to any other leaderboard path.
+- Named scores are saved locally first, then queued in `localStorage` under `wizardAdventuresPendingGlobalScores` for Firestore sync.
+- Pending global scores are checked against the current global top 10 before upload. Scores that no longer qualify are removed from the pending queue without deleting anything from Firestore.
+- Firebase read/write errors are caught so the local leaderboard remains the fallback when Firestore fails or the player is offline.
+- `src/game.js` is loaded as an ES module through `index.html` so Firebase modular SDK imports work. Serve the folder over a local/static server; opening directly as `file://` is no longer supported.
 
 iPad/Safari touch notes:
 
