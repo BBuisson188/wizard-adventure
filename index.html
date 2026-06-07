@@ -30,10 +30,10 @@
         <button id="fullscreenButton" class="fullscreen-button" type="button" aria-label="Enter full screen">Full Screen</button>
         <div id="touchControls" class="touch-controls standard on-title" aria-label="Touch controls">
           <div class="touch-dpad" aria-label="Movement buttons">
-            <button class="touch-btn dpad-btn up" data-key="ArrowUp" data-touch="up" aria-label="Up">▲</button>
-            <button class="touch-btn dpad-btn left" data-key="ArrowLeft" data-touch="left" aria-label="Left">◀</button>
-            <button class="touch-btn dpad-btn right" data-key="ArrowRight" data-touch="right" aria-label="Right">▶</button>
-            <button class="touch-btn dpad-btn down" data-key="ArrowDown" data-touch="down" aria-label="Down">▼</button>
+            <button class="touch-btn dpad-btn up" data-key="ArrowUp" data-touch="up" aria-label="Up">&#9650;</button>
+            <button class="touch-btn dpad-btn left" data-key="ArrowLeft" data-touch="left" aria-label="Left">&#9664;</button>
+            <button class="touch-btn dpad-btn right" data-key="ArrowRight" data-touch="right" aria-label="Right">&#9654;</button>
+            <button class="touch-btn dpad-btn down" data-key="ArrowDown" data-touch="down" aria-label="Down">&#9660;</button>
           </div>
           <div class="touch-actions" aria-label="Action buttons">
             <button class="touch-btn action-btn button-b" data-key="KeyX" data-touch="buttonB" aria-label="B button">B</button>
@@ -54,5 +54,14 @@
   </script>
   <script src="src/level1-data.js"></script>
   <script type="module" src="src/game.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js').catch(error => {
+          console.warn('Offline cache registration failed:', error);
+        });
+      });
+    }
+  </script>
 </body>
 </html>
